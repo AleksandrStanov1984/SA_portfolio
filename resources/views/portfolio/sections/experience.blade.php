@@ -1,3 +1,4 @@
+{{-- resources/views/portfolio/sections/experience.blade.php --}}
 @php
     // Список мест работы в порядке сверху вниз
     $jobs = [
@@ -34,52 +35,65 @@
     ];
 @endphp
 
-<div class="experience-wrapper">
+<div class="accordion-card open">
+    <div class="accordion-header">
+        <span>@lang('portfolio.experience_title')</span>
+        <span class="accordion-arrow">›</span>
+    </div>
 
-    @foreach($jobs as $key => $job)
-        <div class="exp-item" data-exp="{{ $key }}">
+    <div class="accordion-body open">
 
-            {{-- Верхняя строка: должность + сроки --}}
-            <div class="exp-header">
-                <div class="exp-title">
-                    <strong>@lang("portfolio.{$job['role']}")</strong><br>
-                    <span class="exp-company">@lang("portfolio.{$job['company']}")</span>
+        <div class="experience-wrapper">
+
+            @foreach($jobs as $key => $job)
+                <div class="exp-item" data-exp="{{ $key }}">
+
+                    {{-- Верхняя строка: должность + сроки --}}
+                    <div class="exp-header">
+                        <div class="exp-title">
+                            <strong>@lang("portfolio.{$job['role']}")</strong><br>
+                            <span class="exp-company">@lang("portfolio.{$job['company']}")</span>
+                        </div>
+
+                        <div class="exp-period">
+                            @lang("portfolio.{$job['period']}")
+                        </div>
+                    </div>
+
+                    {{-- Список задач --}}
+                    <ul class="exp-list">
+                        @foreach($job['items'] as $item)
+                            <li>@lang("portfolio.$item")</li>
+                        @endforeach
+                    </ul>
+
                 </div>
-
-                <div class="exp-period">
-                    @lang("portfolio.{$job['period']}")
-                </div>
-            </div>
-
-            {{-- Список задач --}}
-            <ul class="exp-list">
-                @foreach($job['items'] as $item)
-                    <li>@lang("portfolio.$item")</li>
-                @endforeach
-            </ul>
+            @endforeach
 
         </div>
-    @endforeach
 
+    </div>
 </div>
 
-{{-- Стили --}}
 <style>
     .experience-wrapper {
         display: flex;
         flex-direction: column;
         gap: 32px;
+        padding-top: 10px;
     }
 
     .exp-item {
         border-bottom: 1px solid #333;
         padding-bottom: 22px;
+        padding-right: 6px;
     }
 
     .exp-header {
         display: flex;
         justify-content: space-between;
         align-items: flex-start;
+        gap: 10px;
         margin-bottom: 10px;
     }
 

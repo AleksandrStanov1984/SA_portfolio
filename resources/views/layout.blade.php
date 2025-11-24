@@ -278,6 +278,51 @@
             }
         }
     </style>
+
+<style>
+    /* === Accordion Card === */
+    .accordion-card {
+        background: #0f172a;
+        border: 1px solid #1e293b;
+        border-radius: 16px;
+        padding: 18px 22px;
+        margin-bottom: 18px;
+        transition: background 0.35s, transform 0.25s;
+        cursor: pointer;
+    }
+
+    .accordion-card:hover {
+        background: #1e293b;
+        transform: translateY(-2px);
+    }
+
+    .accordion-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: #e2e8f0;
+    }
+
+    .accordion-arrow {
+        transition: transform 0.3s ease;
+        font-size: 1.5rem;
+    }
+
+    .accordion-body {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.35s ease;
+        color: #cbd5e1;
+        padding-right: 8px;
+    }
+
+    .accordion-body.open {
+        padding-top: 14px;
+    }
+</style>
+
 </head>
 <body>
 <div class="page">
@@ -325,5 +370,41 @@
 <script>
     document.getElementById('year').textContent = new Date().getFullYear();
 </script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".accordion-card").forEach(card => {
+        const header = card.querySelector(".accordion-header");
+        const body = card.querySelector(".accordion-body");
+        const arrow = card.querySelector(".accordion-arrow");
+
+        if (!header || !body) return;
+
+        header.addEventListener("click", () => {
+            const isOpen = body.classList.contains("open");
+
+            if (isOpen) {
+                body.classList.remove("open");
+                card.classList.remove("open");
+                body.style.maxHeight = "0px";
+                arrow.style.transform = "rotate(0deg)";
+            } else {
+                body.classList.add("open");
+                card.classList.add("open");
+                body.style.maxHeight = body.scrollHeight + "px";
+                arrow.style.transform = "rotate(90deg)";
+            }
+        });
+
+        // Если аккордион открыт по умолчанию
+        if (body.classList.contains("open")) {
+            body.style.maxHeight = body.scrollHeight + "px";
+            arrow.style.transform = "rotate(90deg)";
+        }
+    });
+});
+</script>
+
+
 </body>
 </html>

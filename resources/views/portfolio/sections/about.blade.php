@@ -1,12 +1,17 @@
 {{-- resources/views/portfolio/sections/about.blade.php --}}
-<section id="about">
-    <h2 class="section-title">@lang('portfolio.about_title')</h2>
+<div id="about" class="accordion-card open">
+    <div class="accordion-header">
+        <span>@lang('portfolio.about_title')</span>
+        <span class="accordion-arrow">›</span>
+    </div>
 
-    <p class="section-subtitle">
-        @lang('portfolio.about_subtitle')
-    </p>
+    <div class="accordion-body open">
+        <p class="section-subtitle" style="color:#9ca3af;margin-bottom:12px;">
+            @lang('portfolio.about_subtitle')
+        </p>
 
-    <p>
-        @lang('portfolio.about_text')
-    </p>
-</section>
+        <p>
+            @lang('portfolio.about_text')
+        </p>
+    </div>
+</div>
