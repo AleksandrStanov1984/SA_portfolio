@@ -137,6 +137,81 @@ return [
     'exp_grain_li3' => 'Integration mit ERP- und CRM-Systemen.',
     'exp_grain_li4' => 'Optimierung betrieblicher Prozesse und Digitalisierung.',
 
+'modal_close' => 'Schließen',
+
+'proj_szua_modal_p1' => 'I worked as Lead Full-Stack E-Commerce Engineer for the SZ.UA online store (OpenCart, 100k+ products). I was responsible for backend architecture, SQL optimisation and the full JSON/AJAX flow from UI down to the database.',
+'proj_szua_modal_p2' => 'Critical modules such as cart, catalogue filters, price and margin calculation, order creation and shipment tracking were almost completely rewritten. As a result, response time dropped from 12–60 seconds to 0.01–0.6 seconds and server load was dramatically reduced.',
+'proj_szua_modal_li1' => 'Designed and implemented JSON/AJAX APIs for the frontend.',
+'proj_szua_modal_li2' => 'Optimised complex SQL queries, indexes and database structure.',
+'proj_szua_modal_li3' => 'Re-implemented cart, filters, orders, margin and shipping modules.',
+'proj_szua_modal_li4' => 'Implemented payment and logistics integrations.',
+'proj_szua_modal_li5' => 'Refactored legacy OpenCart code and improved overall system stability.',
+
+    // Berufserfahrung – MRS Electronic
+    'exp_mrs_role'    => 'C# / .NET Entwickler',
+    'exp_mrs_company' => 'MRS Electronic GmbH & Co. KG · Rottweil, Deutschland',
+    'exp_mrs_period'  => 'seit 05/2024',
+    'exp_mrs_li1'     => 'PC-Programmierung in .NET C# für Testsysteme.',
+    'exp_mrs_li2'     => 'Integration von CAN MTS, Modbus und OPC UA.',
+    'exp_mrs_li3'     => 'Entwicklung von Windows-Forms-Oberflächen für Mess- und Prüfanlagen.',
+    'exp_mrs_li4'     => 'Analyse, Wartung und Erweiterung bestehender Testsysteme.',
+
+    // Berufserfahrung – arven.io
+    'exp_arven_role'    => 'Full Stack Entwickler',
+    'exp_arven_company' => 'arvenio marketing GmbH (arven.io) · Rottweil',
+    'exp_arven_period'  => '08/2022 – 12/2023',
+    'exp_arven_li1'     => 'Entwicklung eines DMS-Systems im christlichen Umfeld.',
+    'exp_arven_li2'     => 'Shopware-Erweiterungen und individuelle E-Commerce-Lösungen.',
+    'exp_arven_li3'     => 'SCRUM, internationale Teams, Performance-Optimierung.',
+    'exp_arven_li4'     => 'Entwicklung und Wartung von Shopware-Plug-ins und Templates.',
+
+    // Berufserfahrung – SOHONET
+    'exp_sohonet_role'    => 'Software Developer',
+    'exp_sohonet_company' => 'SOHONET · Kyiv, Ukraine',
+    'exp_sohonet_period'  => '05/2021 – 05/2022',
+    'exp_sohonet_li1'     => 'Entwicklung und Wartung von Software für Internet, IPTV und IP-Telefonie.',
+    'exp_sohonet_li2'     => 'Integration von Backend-Systemen mit Glasfaser- und Funknetz-Infrastruktur.',
+    'exp_sohonet_li3'     => 'Automatisierung interner Abläufe und Kundenservice-Workflows.',
+    'exp_sohonet_li4'     => 'Monitoring, Billing- und CRM-Integration (Asterisk, Abrechnung).',
+
+    // Berufserfahrung – SZ.UA / SMARTZONE
+    'exp_szua_role'    => 'Software Entwickler / E-Commerce Engineer',
+    'exp_szua_company' => 'SMARTZONE (SZ.UA) · Kyiv, Ukraine',
+    'exp_szua_period'  => '01/2021 – 06/2021',
+    'exp_szua_li1'     => 'Entwicklung und Optimierung einer E-Commerce-Plattform.',
+    'exp_szua_li2'     => 'Verbesserung der Datenbankstruktur und Performance (100k+ Produkte).',
+    'exp_szua_li3'     => 'Entwicklung von Zahlungs- und Logistikintegrationen.',
+    'exp_szua_li4'     => 'Unterstützung beim Aufbau von Geschäftsprozessen und Analytics.',
+
+    // Berufserfahrung – ZEO / Grain Capital
+    'exp_grain_role'    => 'C/C++ Ingenieur / Systemintegrator',
+    'exp_grain_company' => 'GK Grain Capital · Odessa, Ukraine',
+    'exp_grain_period'  => '11/2019 – 02/2021',
+    'exp_grain_li1'     => 'Entwicklung von Software für Automatisierung im Agrarsektor.',
+    'exp_grain_li2'     => 'Entwicklung von Software für Elevatoren auf Basis des SMART-Steuerungssystems.',
+    'exp_grain_li3'     => 'Integration mit ERP- und CRM-Systemen.',
+    'exp_grain_li4'     => 'Optimierung betrieblicher Prozesse und Digitalisierung.',
+
+    // Reviews – заголовки и подписи
+    'reviews_title'          => 'Feedback & Empfehlungen',
+    'reviews_subtitle'       => 'Kurze Rückmeldungen von Kolleg:innen, Kunden und Partnern.',
+    'reviews_list_title'     => 'Letzte Rückmeldungen',
+    'reviews_empty'          => 'Es sind noch keine öffentlichen Rückmeldungen vorhanden.',
+    'reviews_form_title'     => 'Dein kurzes Feedback (max. 100 Zeichen)',
+    'reviews_name_label'     => 'Name (optional)',
+    'reviews_rating_label'   => 'Bewertung',
+    'reviews_comment_label'  => 'Kommentar',
+    'reviews_submit'         => 'Feedback senden',
+    'reviews_anonymous'      => 'Anonym',
+    'reviews_success'        => 'Danke! Dein Feedback wurde gespeichert und wird nach Prüfung angezeigt.',
+
+    'languages_list' => 'Bevorzugte Sprachen: Deutsch, Englisch, Russisch, Ukrainisch.',
+        'footer_signature' => 'Design & Entwicklung: Oleksandr Stanov',
+        'no_html_allowed' => 'HTML-Tags sind im Feedback nicht erlaubt.',
+
+
+
+
 
 
 ];

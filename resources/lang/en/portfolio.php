@@ -131,6 +131,81 @@ return [
     'exp_grain_li3' => 'Integration with ERP and CRM solutions.',
     'exp_grain_li4' => 'Process optimisation and digital transformation.',
 
+'modal_close' => 'Close',
+
+'proj_szua_modal_p1' => 'I worked as Lead Full-Stack E-Commerce Engineer for the SZ.UA online store (OpenCart, 100k+ products). I was responsible for backend architecture, SQL optimisation and the full JSON/AJAX flow from UI down to the database.',
+'proj_szua_modal_p2' => 'Critical modules such as cart, catalogue filters, price and margin calculation, order creation and shipment tracking were almost completely rewritten. As a result, response time dropped from 12–60 seconds to 0.01–0.6 seconds and server load was dramatically reduced.',
+'proj_szua_modal_li1' => 'Designed and implemented JSON/AJAX APIs for the frontend.',
+'proj_szua_modal_li2' => 'Optimised complex SQL queries, indexes and database structure.',
+'proj_szua_modal_li3' => 'Re-implemented cart, filters, orders, margin and shipping modules.',
+'proj_szua_modal_li4' => 'Implemented payment and logistics integrations.',
+'proj_szua_modal_li5' => 'Refactored legacy OpenCart code and improved overall system stability.',
+
+    // Experience – MRS Electronic
+    'exp_mrs_role'    => 'C# / .NET Engineer',
+    'exp_mrs_company' => 'MRS Electronic GmbH & Co. KG · Rottweil, Germany',
+    'exp_mrs_period'  => 'since 05/2024',
+    'exp_mrs_li1'     => 'PC programming in .NET C# for test systems.',
+    'exp_mrs_li2'     => 'Integration of CAN MTS, Modbus and OPC UA.',
+    'exp_mrs_li3'     => 'Development of Windows Forms GUIs for measurement and test benches.',
+    'exp_mrs_li4'     => 'Analysis, maintenance and extension of existing test systems.',
+
+    // Experience – arven.io
+    'exp_arven_role'    => 'Full Stack Developer',
+    'exp_arven_company' => 'arvenio marketing GmbH (arven.io) · Rottweil',
+    'exp_arven_period'  => '08/2022 – 12/2023',
+    'exp_arven_li1'     => 'Development of a DMS system in a Christian context.',
+    'exp_arven_li2'     => 'Shopware extensions and custom E-Commerce solutions.',
+    'exp_arven_li3'     => 'SCRUM, international teams, performance optimisation.',
+    'exp_arven_li4'     => 'Development and maintenance of Shopware plug-ins and templates.',
+
+    // Experience – SOHONET
+    'exp_sohonet_role'    => 'Software Developer',
+    'exp_sohonet_company' => 'SOHONET · Kyiv, Ukraine',
+    'exp_sohonet_period'  => '05/2021 – 05/2022',
+    'exp_sohonet_li1'     => 'Development and maintenance of software for Internet, IPTV and IP telephony.',
+    'exp_sohonet_li2'     => 'Integration of backend systems with fibre and wireless infrastructure.',
+    'exp_sohonet_li3'     => 'Automation of internal processes and customer service workflows.',
+    'exp_sohonet_li4'     => 'Monitoring, billing and CRM integration (Asterisk, billing systems).',
+
+    // Experience – SZ.UA / SMARTZONE
+    'exp_szua_role'    => 'Software Engineer / E-Commerce Engineer',
+    'exp_szua_company' => 'SMARTZONE (SZ.UA) · Kyiv, Ukraine',
+    'exp_szua_period'  => '01/2021 – 06/2021',
+    'exp_szua_li1'     => 'Development and optimisation of an e-commerce platform.',
+    'exp_szua_li2'     => 'Improving database structure and performance (100k+ products).',
+    'exp_szua_li3'     => 'Development of payment and logistics integrations.',
+    'exp_szua_li4'     => 'Support in building business processes and analytics.',
+
+    // Experience – ZEO / Grain Capital
+    'exp_grain_role'    => 'C/C++ Engineer / System Integrator',
+    'exp_grain_company' => 'GK Grain Capital · Odessa, Ukraine',
+    'exp_grain_period'  => '11/2019 – 02/2021',
+    'exp_grain_li1'     => 'Software for automation in the agricultural sector.',
+    'exp_grain_li2'     => 'Software for elevator control based on SMART controllers.',
+    'exp_grain_li3'     => 'Integration with ERP and CRM systems.',
+    'exp_grain_li4'     => 'Optimisation and digitalisation of business processes.',
+
+    // Reviews
+    'reviews_title'          => 'Feedback & Testimonials',
+    'reviews_subtitle'       => 'Short feedback from colleagues, clients and partners.',
+    'reviews_list_title'     => 'Latest feedback',
+    'reviews_empty'          => 'No public feedback has been submitted yet.',
+    'reviews_form_title'     => 'Your short feedback (max. 100 characters)',
+    'reviews_name_label'     => 'Name (optional)',
+    'reviews_rating_label'   => 'Rating',
+    'reviews_comment_label'  => 'Comment',
+    'reviews_submit'         => 'Send feedback',
+    'reviews_anonymous'      => 'Anonymous',
+    'reviews_success'        => 'Thank you! Your feedback has been saved and will be shown after review.',
+
+        'languages_list' => 'Preferred languages: German, English, Russian, Ukrainian.',
+            'footer_signature' => 'Designed & developed by Oleksandr Stanov',
+            'no_html_allowed' => 'HTML tags are not allowed in the feedback.',
+
+
+
+
 
 
 ];
