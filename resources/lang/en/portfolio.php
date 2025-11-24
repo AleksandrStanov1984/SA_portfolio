@@ -203,6 +203,164 @@ return [
             'footer_signature' => 'Designed & developed by Oleksandr Stanov',
             'no_html_allowed' => 'HTML tags are not allowed in the feedback.',
 
+            'modal_szua_html' => '
+            <h2>SZ.UA – E-Commerce Platform (100,000+ products)</h2>
+            <p>
+            I worked as a Full-Stack E-Commerce Engineer responsible for restructuring the
+            backend architecture, optimising SQL performance and rebuilding the entire JSON/AJAX layer.
+            </p>
+
+            <ul>
+            <li><strong>300× performance improvement</strong>: old processes 12–60s → now 0.01–0.6s</li>
+            <li>Complete rewrite of <strong>catalogue filters</strong> (the most complex module)</li>
+            <li>Re-implementation of <strong>cart, pricing, margins and order flow</strong></li>
+            <li>Database optimisation for <strong>100k+ products</strong></li>
+            <li>New <strong>AJAX/JSON architecture</strong> for instant responses</li>
+            <li>Payment + logistics integrations, shipment tracking</li>
+            <li>Legacy code refactoring, stability improvements</li>
+            </ul>
+
+            <p>
+            The result was a much faster store, reduced server load and a consistently stable shopping process.
+            </p>
+            ',
+
+'modal_sohonet_html' => '
+<h2>SOHONET – Customer Portal & CRM</h2>
+<p>
+Backend services and customer portal for internet, IPTV and IP telephony.
+Integrations with CRM, billing, Asterisk and internal workflow automation.
+</p>
+<ul>
+<li>Backend APIs for tariffs, payments, provisioning</li>
+<li>Integration with fibre & wireless infrastructure</li>
+<li>Billing, diagnostics and monitoring tools</li>
+</ul>
+',
+
+'modal_arven_html' => '
+<h2>arven.io – DMS, Shopware & E-Commerce Development</h2>
+
+<p>
+At arven.io I worked on the development of a complex DMS system and multiple
+E-Commerce / Shopware projects. My work was characterised by strong
+professionalism, high engagement and excellent technical expertise.
+</p>
+
+<ul>
+<li><strong>Backend & frontend development</strong> for a large DMS system (PHP, Laravel, Vue.js, Quasar, AWS)</li>
+<li><strong>SQL & MongoDB</strong> database design and optimisation</li>
+<li><strong>Agile development</strong>, SCRUM, daily syncs in an international team</li>
+<li><strong>Certified Shopware Developer</strong></li>
+<li>Development of <strong>Shopware 5/6 plug-ins</strong> and Symfony-based extensions</li>
+<li>Custom adaptations for client projects</li>
+<li>Contribution to a large <strong>automotive Shopware project</strong></li>
+<li>Performance work & <strong>stress testing</strong></li>
+<li>Development of <strong>custom Shopware plug-ins</strong></li>
+</ul>
+
+<p>
+I was praised for my ability to analyse complex technical challenges,
+create innovative solutions, and deliver reliably even under high workload.
+</p>
+',
+
+'modal_mrs_html' => '
+<h2>MRS Electronic – Test Systems for Power Semiconductors</h2>
+
+<p>
+In 2024 I worked at MRS Electronic as a software engineer in the department
+for test systems for power semiconductors. The company develops electronic
+modules, gateways and HMI systems for automotive and industrial customers.
+</p>
+
+<h3>Main responsibilities</h3>
+<ul>
+<li>PC software in <strong>.NET C#</strong> for measurement and test systems</li>
+<li>Working with the <strong>CAN MTS</strong> protocol and integrating embedded modules</li>
+<li>Implementing <strong>Modbus</strong> interfaces (including Pilz safety relays)</li>
+<li>Developing Windows Forms GUIs for measurement devices and test benches</li>
+<li>Using communication protocols such as <strong>OPC UA</strong></li>
+<li>Working with gateways, motor controllers, compact ECUs and HMI systems</li>
+</ul>
+
+<h3>Performance & strengths</h3>
+<ul>
+<li>Very strong technical knowledge in .NET and test systems</li>
+<li>Quick onboarding and learning (C#, Windows Forms)</li>
+<li>Reliable, structured and systematic work style</li>
+<li>High resilience and flexibility under workload</li>
+<li>Very good communication skills in German and English</li>
+<li>Professional and cooperative behaviour towards supervisors, colleagues and customers</li>
+<li>Strong contribution to efficient teamwork</li>
+</ul>
+
+<p>
+The official reference from MRS confirms the high quality of my work
+and very good results in all assigned tasks.
+</p>
+',
+
+'proj_creedle_title' => 'Creedle Eco-Platform — word, rocks, admin, my.creedl.io',
+'proj_creedle_meta'  => 'Laravel & Vue.js · Module development',
+'proj_creedle_desc'  => 'Contributed to the development of several modules of the Creedle Eco-Platform — a digital all-in-one solution for content management, internal workflows, collaboration, material management and community features. Focus on Laravel/Vue components, role/permission model, API integrations and the user dashboard (my.creedl.io).',
+
+'modal_creedle_html' => '
+<h2>Creedle Eco-Platform – Module Development</h2>
+
+<p>
+The Creedle Eco-Platform is a modular, cloud-based system for content management,
+internal workflows, role/permission management, communication, knowledge management
+and digital communities. I contributed to several core modules.
+</p>
+
+<p>
+My responsibilities included building new components, improving existing modules,
+API integrations, data modelling and UI/UX refinement using Laravel + Vue.js.
+</p>
+
+<h3>My contributions to the modules</h3>
+<ul>
+<li>Enhancement of the <strong>“word”</strong> content module — editor, structure, variants, workflow logic.</li>
+<li>Work on <strong>“rocks”</strong> — material groups, files, assignments, role-based visibility.</li>
+<li>Admin module improvements — FAQ/FQA system, management interfaces.</li>
+<li>Improving the <strong>my.creedl.io</strong> user dashboard — structure, navigation, module integration.</li>
+<li><strong>API integrations</strong>, authentication, role/permission system, performance improvements.</li>
+</ul>
+',
+
+'modal_grain_html' => '
+<h2>GK Grain Capital – Software Engineering & System Integration</h2>
+
+<p>
+At GK Grain Capital I was responsible for developing and maintaining software
+solutions for automation of trading and production processes in the agricultural sector.
+</p>
+
+<h3>My responsibilities</h3>
+<ul>
+<li>Development of automation software for trading operations
+(inventory, logistics coordination, CRM processes).</li>
+
+<li>Software for grain elevator systems based on the <strong>SMART control platform</strong>,
+with real-time monitoring, automation and control logic.</li>
+
+<li>Integration of applications with existing <strong>ERP and CRM</strong> systems
+to improve data flow and operational efficiency.</li>
+
+<li>Collaboration with cross-functional teams to develop user-friendly tools
+that reduce training effort and improve usability.</li>
+
+<li>Contribution to the company’s <strong>digital transformation</strong> —
+scalable and flexible software solutions for the agricultural industry.</li>
+
+<li>Technical support and continuous optimisation of deployed applications
+to ensure stability and reliability.</li>
+</ul>
+',
+
+
+
 
 
 

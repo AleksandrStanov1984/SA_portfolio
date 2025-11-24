@@ -3,19 +3,30 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PortfolioController;
 
-// редирект с корня на язык по умолчанию
-Route::get('/', function () {
-    return redirect('/de');
-});
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+*/
 
-// группа /{locale}
-Route::group([
-    'prefix' => '{locale}',
-    'where'  => ['locale' => 'en|de|ru'],
-], function () {
-    Route::get('/', [PortfolioController::class, 'index'])
-        ->name('portfolio');
+// Корень ведёт на язык по умолчанию
+Route::redirect('/', '/de');
 
-    Route::get('/download-pdf', [PortfolioController::class, 'downloadPdf'])
-        ->name('portfolio.pdf');
-});
+// Один маршрут для портфолио
+Route::get('/{locale}', [PortfolioController::class, 'index'])
+    ->name('portfolio')
+    ->whereIn('locale', ['de', 'en', 'ru']);
+
+// Маршрут для отправки отзывов
+Route::post('/{locale}/review', [PortfolioController::class, 'storeReview'])
+    ->name('portfolio.review.store')
+    ->whereIn('locale', ['de', 'en', 'ru']);
+
+// отдельный AJAX-метод для клика по звёздам
+Route::post('/{locale}/portfolio/rating-click', [PortfolioController::class, 'rateClick'])
+    ->name('portfolio.review.rate');
+
+// Маршрут для PDF
+Route::get('/{locale}/portfolio.pdf', [PortfolioController::class, 'downloadPdf'])
+    ->name('portfolio.pdf')
+    ->whereIn('locale', ['de', 'en', 'ru']);

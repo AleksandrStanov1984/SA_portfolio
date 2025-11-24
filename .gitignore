@@ -1,49 +1,48 @@
-# Composer
-/vendor/
-composer.lock
-
-# Node
-/node_modules/
-/pnpm-lock.yaml
-/package-lock.json
-/yarn.lock
-
-# Laravel cache & compiled
-/bootstrap/cache/
-/storage/*.key
-/storage/logs/*
-/storage/framework/cache/*
-/storage/framework/sessions/*
-/storage/framework/views/*
-/storage/framework/testing/*
-
-# Laravel specific
-.env
-.env.*
-!.env.example
-
-# IDE & OS
-/.idea/
-/.vscode/
-/nbproject/
-.DS_Store
-Thumbs.db
-
-# NPM build output
-/public/hot
+# Laravel
+/vendor
+/node_modules
 /public/storage
-/public/build
-/public/mix-manifest.json
+/storage/*.key
+.env
+.env.backup
+.env.local
+.env.development
+.env.production
+.env.testing
 
-# PHPUnit
-.phpunit.result.cache
+# SQLite local DB
+/database/*.sqlite
 
-# Coverage
-/coverage/
-/clover.xml
+# Puppeteer browser binaries / cache
+/.local-chromium
+/.puppeteer
+/.cache/puppeteer
+**/puppeteer_dev_profile-*/
+**/chrome-win*/
+**/chrome-linux*/
+**/chrome-mac*/
 
-# Misc
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+# PDF temp files
+*.pdf
+/temp
+/tmp
+
+# Logs
+/storage/logs/*.log
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# OS garbage
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# Compiled assets
+/public/js/*.map
+/public/css/*.map

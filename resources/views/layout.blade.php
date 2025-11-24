@@ -179,6 +179,89 @@
             transform: translateY(-2px) scale(1.03);
         }
 
+    /* Обёртка для картинок проектов */
+    .project-image-wrapper {
+        width: 100%;
+        aspect-ratio: 16 / 9;          /* одинаковая высота при любой ширине */
+        border-radius: var(--radius-xl);
+        overflow: hidden;
+        background: #020617;
+        margin-bottom: 12px;
+    }
+
+    /* Сама картинка внутри */
+    .project-image-wrapper img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: cover;             /* аккуратно обрезает, без сплющивания */
+        transform: scale(1.01);
+        transition: transform 180ms ease-out, opacity 180ms ease-out;
+    }
+
+    /* Лёгкий эффект при наведении на карточку */
+    .card:hover .project-image-wrapper img {
+        transform: scale(1.04);
+        opacity: 0.96;
+    }
+
+.project-image-wrapper {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    background: #020617;
+    margin-bottom: 10px;
+}
+
+.project-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    transform: scale(1.01);
+    transition: transform 180ms ease-out, opacity 180ms ease-out;
+}
+
+.card:hover .project-image-wrapper img {
+    transform: scale(1.04);
+    opacity: 0.96;
+}
+
+.project-meta {
+    font-size: 0.85rem;
+    color: #9ca3af;
+}
+
+.collapsible-section {
+    margin-top: 32px;
+}
+
+.collapsible-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
+}
+
+.collapsible-icon {
+    font-size: 1.2rem;
+    color: #9ca3af;
+    transition: transform 0.2s ease;
+}
+
+/* Поворот стрелки, когда свернуто */
+.collapsible-section[data-collapsed="true"] .collapsible-icon {
+    transform: rotate(90deg);
+}
+
+
+
 
 
         footer {
@@ -230,11 +313,11 @@
 
     @yield('content')
 
-    <footer class="site-footer no-print">
-        © <span id="year"></span> Oleksandr Stanov.
-        <br>
-        <span class="footer-signature">Designed &amp; developed by Oleksandr Stanov</span>
+    <footer style="margin-top:40px;padding:20px 0;text-align:center;
+                   font-size:0.85rem;color:#6b7280;border-top:1px solid #1f2937;">
+        © {{ date('Y') }} Oleksandr Stanov — All rights reserved.
     </footer>
+
 
 
 </div>

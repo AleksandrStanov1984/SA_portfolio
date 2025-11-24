@@ -209,6 +209,166 @@ return [
         'footer_signature' => 'Design & Entwicklung: Oleksandr Stanov',
         'no_html_allowed' => 'HTML-Tags sind im Feedback nicht erlaubt.',
 
+        'modal_szua_html' => '
+        <h2>SZ.UA – E-Commerce Plattform (100.000+ Produkte)</h2>
+        <p>
+        Ich arbeitete als Full-Stack E-Commerce Engineer für die Plattform SZ.UA (OpenCart).
+        Die Hauptaufgabe bestand darin, veraltete und schwere Module neu zu schreiben,
+        SQL-Abfragen zu optimieren und den gesamten JSON/AJAX-Datenfluss neu aufzubauen.
+        </p>
+
+        <ul>
+        <li><strong>300× Performance-Optimierung</strong>: alte Prozesse 12–60s → jetzt 0.01–0.6s</li>
+        <li>Neuaufbau der <strong>Katalogfilter</strong> (schwerstes Modul des Shops)</li>
+        <li>Komplette Überarbeitung von <strong>Korb-, Preis- und Margenberechnung</strong></li>
+        <li>Optimierte Datenbankstrukturen für <strong>100k+ Produkte</strong></li>
+        <li>Neuer <strong>AJAX/JSON-Stack</strong> für Ultra-Schnelligkeit</li>
+        <li>Integration von <strong>Zahlung</strong>, <strong>Logistik</strong>, Tracking API</li>
+        <li>Refactoring des gesamten Legacy-Codes → viel stabilere Plattform</li>
+        </ul>
+
+        <p>
+        Das Resultat war ein extrem schneller Shop mit niedriger Serverlast,
+        deutlich besserer UX und stabilen Geschäftsprozessen.
+        </p>
+        ',
+
+'modal_sohonet_html' => '
+<h2>SOHONET – Kundenportal & CRM</h2>
+<p>
+Entwicklung von Backend-Services und Kundenportal für Internet, IPTV und IP-Telefonie.
+Integration mit CRM, Billing, Asterisk-Telefonie und Automatisierung von internen Prozessen.
+</p>
+<ul>
+<li>Backend APIs für Tarife, Zahlungen, Provisioning</li>
+<li>Anbindung an Glasfaser- und Funknetz-Infrastruktur</li>
+<li>Tools für Billing, Diagnostik und Monitoring</li>
+</ul>
+',
+
+'modal_arven_html' => '
+<h2>arven.io – DMS, Shopware & E-Commerce Entwicklung</h2>
+
+<p>
+Während meiner Tätigkeit bei arven.io war ich für die Entwicklung eines
+komplexen DMS-Systems sowie zahlreiche E-Commerce- und Shopware-Projekte
+verantwortlich. Meine Arbeit zeichnete sich durch hohe Professionalität,
+Engagement und ausgezeichnete Fachkenntnisse aus.
+</p>
+
+<ul>
+<li><strong>Backend & Frontend Entwicklung</strong> eines komplexen DMS (PHP, Laravel, Vue.js, Quasar, AWS)</li>
+<li><strong>SQL & MongoDB</strong> Datenbankdesign und Optimierung</li>
+<li><strong>Agile Entwicklung</strong>, SCRUM, tägliche Abstimmungen im internationalen Team</li>
+<li><strong>Shopware Developer Zertifizierung</strong> erfolgreich abgelegt</li>
+<li>Entwicklung von <strong>Shopware 5/6 Plug-ins</strong> und Symfony-basierten Erweiterungen</li>
+<li>Auftragsbezogene Anpassungen in Kundenprojekten</li>
+<li>Mitarbeit an einem großen <strong>Automotive-Shopware-Projekt</strong></li>
+<li>Unterstützung bei <strong>Stresstests</strong> und Performance-Optimierung</li>
+<li>Eigenentwicklung mehrerer <strong>Plug-ins für Shopware</strong></li>
+</ul>
+
+<p>
+Gelobt wurden besonders meine Fähigkeit, komplexe technische Herausforderungen
+zu analysieren, kreative Lösungen zu entwickeln sowie meine hohe Belastbarkeit
+und Termintreue auch in stressigen Phasen.
+</p>
+',
+
+'modal_mrs_html' => '
+<h2>MRS Electronic – Testsysteme für Leistungshalbleiter</h2>
+
+<p>
+Im Jahr 2024 war ich bei MRS Electronic als Softwareentwickler in der Abteilung
+für Testsysteme für Leistungshalbleiter tätig. Das Unternehmen entwickelt
+intelligente Elektroniklösungen, Gateways und HMI-Systeme für Automotive und Industrie.
+</p>
+
+<h3>Meine Aufgaben (Auszug)</h3>
+<ul>
+<li>PC-Programmierung in <strong>.NET C#</strong> für Test- und Messsysteme</li>
+<li>Arbeit mit dem <strong>CAN MTS</strong> Protokoll und Einbindung von Embedded Modulen</li>
+<li>Implementierung von <strong>Modbus</strong>-Schnittstellen (inkl. Sicherheitsrelais Pilz)</li>
+<li>Entwicklung von Windows-Forms-GUIs für Messgeräte und Prüfstände</li>
+<li>Arbeit mit Kommunikationsprotokollen wie <strong>OPC UA</strong></li>
+<li>Umgang mit Gateways, Motorsteuerungen, kompakten Steuergeräten und HMI-Systemen</li>
+</ul>
+
+<h3>Leistung & Stärken</h3>
+<ul>
+<li>Sehr gutes und breites Fachwissen im .NET- und Testsystem-Umfeld</li>
+<li>Schnelle Einarbeitung in neue Themen (C#, Windows Forms)</li>
+<li>Zuverlässige, strukturierte und sorgfältige Arbeitsweise</li>
+<li>Hohe Belastbarkeit und Flexibilität auch in stressigen Phasen</li>
+<li>Sehr gute Deutsch- und Englischkenntnisse in Wort und Schrift</li>
+<li>Vorbildliches Verhalten gegenüber Vorgesetzten, Kollegen und Kunden</li>
+<li>Aktiver Beitrag zu effizienter Zusammenarbeit im Team</li>
+</ul>
+
+<p>
+Das Zwischenzeugnis von MRS bestätigt die hohe Qualität meiner Arbeit
+und sehr gute Ergebnisse in allen übertragenen Aufgaben.
+</p>
+',
+
+'modal_creedle_html' => '
+<h2>Creedle Eco-Platform – Modulentwicklung</h2>
+
+<p>
+Die Creedle Eco-Platform ist ein modulares, cloudbasiertes System für Content-Verwaltung,
+interne Arbeitsabläufe, Rollenverwaltung, Kommunikation, Wissensmanagement und digitale
+Communities. Ich war an der Entwicklung mehrerer Kernmodule beteiligt.
+</p>
+
+<p>
+Zu meinen Aufgaben gehörten die Entwicklung neuer Komponenten, die Verbesserung
+bestehender Funktionen, API-Integrationen, Datenmodellierung sowie UI/UX-Anpassungen
+in Laravel + Vue.js.
+</p>
+
+<h3>Meine Beiträge zu den Modulen</h3>
+<ul>
+<li>Weiterentwicklung des Content-Moduls <strong>„word“</strong> — Editor, Strukturen, Varianten, Workflows.</li>
+<li>Arbeit am Modul <strong>„rocks“</strong> — Materialgruppen, Dateien, Zuordnungen, rollenbasierte Sichtbarkeit.</li>
+<li>Arbeit am <strong>Admin-Modul</strong> inkl. FQA/FAQ-System und Verwaltungsoberflächen.</li>
+<li>Optimierung des User-Dashboards <strong>„my.creedl.io“</strong> — Bereiche, Navigation, Modul-Integration.</li>
+<li><strong>API-Integrationen</strong>, Authentifizierung, Rollen/Rechte, Performance-Optimierungen.</li>
+</ul>
+',
+
+'modal_grain_html' => '
+<h2>GK Grain Capital – Softwareentwicklung & Systemintegration</h2>
+
+<p>
+Bei GK Grain Capital war ich für die Entwicklung und Wartung von Softwarelösungen zur
+Automatisierung von Handels- und Produktionsprozessen im Agrarsektor verantwortlich.
+</p>
+
+<h3>Meine Aufgaben</h3>
+<ul>
+<li>Entwicklung von Software für Automatisierung von Handelsoperationen
+(Bestandsverwaltung, Logistik, CRM-Prozesse).</li>
+
+<li>Software für Getreidesilos basierend auf dem <strong>SMART-Steuerungssystem</strong>:
+Echtzeitüberwachung, Prozessautomatisierung und Steuerlogik.</li>
+
+<li>Integration von Anwendungen in bestehende <strong>ERP- und CRM-Systeme</strong> zur
+Optimierung betrieblicher Abläufe.</li>
+
+<li>Zusammenarbeit mit funktionsübergreifenden Teams zur Entwicklung
+benutzerfreundlicher Tools, die Schulungsaufwand reduzieren.</li>
+
+<li>Mitarbeit an der <strong>digitalen Transformation</strong> mit Fokus auf skalierbare,
+anpassungsfähige Softwarelösungen.</li>
+
+<li>Bereitstellung technischer Unterstützung und kontinuierliche Optimierung
+eingesetzter Lösungen für Stabilität im Alltag.</li>
+</ul>
+',
+
+
+
+
 
 
 
