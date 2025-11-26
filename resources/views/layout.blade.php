@@ -179,59 +179,118 @@
             transform: translateY(-2px) scale(1.03);
         }
 
-    /* Обёртка для картинок проектов */
-    .project-image-wrapper {
-        width: 100%;
-        aspect-ratio: 16 / 9;          /* одинаковая высота при любой ширине */
-        border-radius: var(--radius-xl);
-        overflow: hidden;
-        background: #020617;
-        margin-bottom: 12px;
-    }
+    /* === SKILLS CAROUSEL === */
 
-    /* Сама картинка внутри */
-    .project-image-wrapper img {
-        width: 100%;
-        height: 100%;
-        display: block;
-        object-fit: cover;             /* аккуратно обрезает, без сплющивания */
-        transform: scale(1.01);
-        transition: transform 180ms ease-out, opacity 180ms ease-out;
-    }
+  /* === SKILLS CAROUSEL — ФИНАЛ === */
 
-    /* Лёгкий эффект при наведении на карточку */
-    .card:hover .project-image-wrapper img {
-        transform: scale(1.04);
-        opacity: 0.96;
-    }
+.skills-mask {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    padding: 30px 0;
+}
 
+.skills-carousel {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.35s ease;
+    will-change: transform;
+}
+
+.skill-card {
+    width: 260px;
+    min-width: 260px;
+    background: #0f172a;
+    border: 1px solid #1e293b;
+    border-radius: 16px;
+    padding: 18px 20px;
+    transition: transform .25s, box-shadow .25s;
+}
+
+.skill-card:hover {
+    transform: scale(1.10);
+    z-index: 20;
+    box-shadow: 0 20px 40px rgba(0,0,0,.6);
+}
+
+.skills-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: #1e293b;
+    border: none;
+    font-size: 22px;
+    color: #fff;
+    cursor: pointer;
+    z-index: 50;
+}
+
+.skills-arrow.left { left: -10px; }
+.skills-arrow.right { right: -10px; }
+
+
+
+
+  /* === SKILLS CAROUSEL — ФИНАЛ === */
+
+
+/* --- PROJECT CARD IMAGE FIX --- */
+
+/* Универсальный блок для всех твоих новых картинок 16:9 */
 .project-image-wrapper {
     width: 100%;
-    aspect-ratio: 16 / 9;
+    aspect-ratio: 1 / 1;
     border-radius: var(--radius-xl);
     overflow: hidden;
     background: #020617;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
+/* Картинка занимает весь блок, но не выходит за рамки */
 .project-image-wrapper img {
     width: 100%;
     height: 100%;
-    display: block;
-    object-fit: cover;
-    transform: scale(1.01);
+    object-fit: cover;     /* заполняет весь блок */
     transition: transform 180ms ease-out, opacity 180ms ease-out;
 }
 
+/* Hover-эффект */
 .card:hover .project-image-wrapper img {
     transform: scale(1.04);
     opacity: 0.96;
+}
+
+
+
+
+/* --- ВЫРАВНИВАНИЕ ТЕКСТОВ — ОЧЕНЬ ВАЖНО --- */
+.card .project-meta {
+    min-height: 33px;               /* делаем одинаковую высоту блока текста */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
 
 .project-meta {
     font-size: 0.85rem;
     color: #9ca3af;
 }
+
+.project-meta p {
+    display: -webkit-box;
+    -webkit-line-clamp: 6;   /* максимум 6 строк */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 
 .collapsible-section {
     margin-top: 32px;
@@ -260,10 +319,6 @@
     transform: rotate(90deg);
 }
 
-
-
-
-
         footer {
             margin-top: 24px;
             font-size: 0.8rem;
@@ -277,9 +332,7 @@
                 align-items: flex-start;
             }
         }
-    </style>
 
-<style>
     /* === Accordion Card === */
     .accordion-card {
         background: #0f172a;
@@ -321,6 +374,20 @@
     .accordion-body.open {
         padding-top: 14px;
     }
+
+/* --- Ограничение текста в карточках: максимум 4 строки + "..." --- */
+.card .project-text {
+    display: -webkit-box;
+    -webkit-line-clamp: 4;        /* <= ГЛАВНОЕ: количество строк */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-height: 6.8em;            /* под 4 строки */
+}
+
+/* === MASTER FIX — ЧТОБЫ НИЧТО НЕ РЕЗАЛО УВЕЛИЧЕНИЕ В СЕКЦИИ SKILLS === */
+
+
 </style>
 
 </head>
@@ -404,6 +471,46 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 </script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+    const carousel = document.getElementById("skills-carousel");
+    const prev = document.getElementById("skills-prev");
+    const next = document.getElementById("skills-next");
+
+    const cards = [...carousel.children];
+    const cardWidth = 260 + 20; // ширина + gap
+    let index = 0;
+
+    // Дублируем карточки (чтобы хватало для бесконечной прокрутки)
+    cards.forEach(c => carousel.appendChild(c.cloneNode(true)));
+
+    function update() {
+        carousel.style.transform = `translateX(${-index * cardWidth}px)`;
+    }
+
+    next.addEventListener("click", () => {
+        index++;
+        if (index >= cards.length) index = 0;
+        update();
+    });
+
+    prev.addEventListener("click", () => {
+        index--;
+        if (index < 0) index = cards.length - 1;
+        update();
+    });
+
+});
+
+</script>
+
+
+
+
+
+
 
 
 </body>

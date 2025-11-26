@@ -9,17 +9,19 @@
     backdrop-filter:blur(10px);
     z-index:60;
 ">
-    <div id="project-modal-panel" style="
-        max-width:900px;
-        width:100%;
-        margin:24px;
-        border-radius:24px;
-        background:#020617;
-        border:1px solid #1f2937;
-        box-shadow:0 0 40px rgba(0,0,0,0.4);
-        padding:32px;
-        position:relative;
-    ">
+   <div id="project-modal-panel" style="
+       max-width: 1350px;            /* ← было 900, увеличил почти в 2 раза */
+       width: 100%;
+       margin: 24px;
+       border-radius: 24px;
+       background: #020617;
+       border: 1px solid #1f2937;
+       box-shadow: 0 0 40px rgba(0,0,0,0.4);
+       padding: 48px;               /* ← было 32, увеличил */
+       position: relative;
+   ">
+
+
         <button onclick="closeProjectModal()" style="
             position:absolute;
             top:16px;right:16px;
@@ -29,7 +31,11 @@
             cursor:pointer;
         ">×</button>
 
-        <div id="project-modal-content" style="color:#e2e8f0;font-size:0.95rem;"></div>
+        <div id="project-modal-content" style="
+            color: #e2e8f0;
+            font-size: 1.45rem;           /* ← было 0.95rem */
+            line-height: 1.95;            /* ← лучше читаемость */
+        "></div>
     </div>
 </div>
 
