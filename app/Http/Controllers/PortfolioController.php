@@ -34,6 +34,7 @@ class PortfolioController extends Controller
 
         return view('portfolio', [
             'locale'  => $locale,
+            'jobs'   => config('experience'),
             'reviews' => $reviews,
         ]);
     }

@@ -181,6 +181,33 @@
 
     /* === SKILLS CAROUSEL === */
 
+/* === Hover эффект для блоков опыта === */
+
+/* Увеличение только для блока Berufserfahrung */
+/* === FULL BLOCK HOVER FOR EXPERIENCE === */
+
+.experience-card {
+    position: relative;
+    transform-origin: center !important;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    will-change: transform;
+    z-index: 1;
+}
+
+/* Поднимаем блок при наведении */
+.experience-card:hover {
+    transform: scale(1.03) !important;
+    z-index: 999; /* выше всего */
+    box-shadow: 0 25px 55px rgba(0, 0, 0, 0.55);
+}
+
+/* ВНУТРЕННИЕ элементы НЕ должны создавать transform-контексты */
+.experience-card * {
+    transform: none !important;
+}
+
+
+
   /* === SKILLS CAROUSEL — ФИНАЛ === */
 
 .skills-mask {
@@ -375,6 +402,17 @@
         padding-top: 14px;
     }
 
+/* Hover-эффект для about (accordion-card) */
+#about.accordion-card {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+#about.accordion-card:hover {
+    transform: scale(1.05);
+    z-index: 20;
+    box-shadow: 0 22px 45px rgba(15, 23, 42, 0.65);
+}
+
 /* --- Ограничение текста в карточках: максимум 4 строки + "..." --- */
 .card .project-text {
     display: -webkit-box;
@@ -386,6 +424,71 @@
 }
 
 /* === MASTER FIX — ЧТОБЫ НИЧТО НЕ РЕЗАЛО УВЕЛИЧЕНИЕ В СЕКЦИИ SKILLS === */
+
+
+/* --- HOVER EFFECT for ABOUT & EXPERIENCE blocks --- */
+
+.about-card,
+.experience-card {
+    position: relative;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    transform-origin: center;
+    z-index: 1;
+}
+
+/* Мощная ярко выраженная тень */
+.about-card:hover,
+.experience-card:hover {
+    transform: scale(1.03);
+    box-shadow:
+        0 0 0 2px rgba(129, 140, 248, 0.35),      /* мягкая фиолетовая окантовка */
+        0 22px 50px rgba(0, 0, 0, 0.8),           /* глубокая чёрная тень */
+        0 12px 25px rgba(79, 70, 229, 0.25);      /* фиолетовое свечение */
+    z-index: 50;
+}
+
+/* Чтобы внутренние элементы не ломали эффект */
+.about-card *,
+.experience-card * {
+    transform: none !important;
+}
+
+/* ОБЩИЙ фикс — аккордеоны должны пропускать тень */
+.accordion-card {
+    overflow: visible !important;
+    position: relative;
+    transition: transform 0.25s ease, box-shadow 0.35s ease;
+    overflow: hidden;
+}
+
+/* Убираем скрытие внутри */
+.accordion-body {
+    max-height: 0;
+    overflow: hidden;
+    padding-top: 0 !important;
+    transition:
+        max-height 0.35s ease,
+        padding 0.35s ease;
+}
+
+.accordion-body.open {
+    padding-top: 14px !important; /* было раньше */
+}
+
+
+
+/* --- ТЕНЬ + УВЕЛИЧЕНИЕ ПРИ НАВЕДЕНИИ (как на других аккордионах) --- */
+.accordion-card:hover {
+    transform: scale(1.03);
+    box-shadow:
+        0 0 0 2px rgba(129, 140, 248, 0.35),   /* фиолетовая мягкая рамка */
+        0 22px 50px rgba(0, 0, 0, 0.85),       /* глубокая тень вниз */
+        0 12px 25px rgba(79, 70, 229, 0.25);   /* фиолетовое свечение */
+    z-index: 50;
+}
+
+
+
 
 
 </style>
