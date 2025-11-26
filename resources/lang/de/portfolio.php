@@ -369,6 +369,25 @@ eingesetzter Lösungen für Stabilität im Alltag.</li>
 'btn_write_review' => 'Bewertung schreiben',
 'reviews_title' => 'Feedback & Testimonials',
 
+// Reviews
+'reviews_title'          => 'Feedback & Testimonials',
+'reviews_subtitle'       => 'Kurze Rückmeldungen von Kolleg:innen, Kunden und Partnern.',
+'reviews_list_title'     => 'Letzte Rückmeldungen',
+'reviews_empty'          => 'Es sind noch keine öffentlichen Rückmeldungen vorhanden.',
+
+'reviews_form_title'     => 'Dein kurzes Feedback (max. 250 Zeichen)',
+'reviews_name_label'     => 'Name (optional)',
+'reviews_rating_label'   => 'Bewertung',
+'reviews_comment_label'  => 'Kommentar',
+'reviews_submit'         => 'Feedback senden',
+'reviews_anonymous'      => 'Anonym',
+'reviews_success'        => 'Danke! Dein Feedback wurde gespeichert und wird nach Prüfung angezeigt.',
+
+'btn_write_review'       => 'Bewertung schreiben',
+'modal_close'            => 'Schließen',
+'no_html_allowed'        => 'HTML-Tags sind im Feedback nicht erlaubt.',
+
+
 
 
 
