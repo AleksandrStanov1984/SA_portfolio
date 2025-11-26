@@ -12,7 +12,7 @@
 
     @yield('content')
 
-    @include('layouts.parts.footer')
+    @include('layouts.parts.footer-legal')
 
 </div>
 

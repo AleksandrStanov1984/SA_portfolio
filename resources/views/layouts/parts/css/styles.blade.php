@@ -460,4 +460,131 @@ right: -10px;
     z-index: 50;
 }
 
+.footer-social a:hover {
+     opacity: 1;
+     transform: scale(1.12);
+ }
+
+ .page-legal {
+     max-width: 800px;
+     margin: 40px auto 0;
+     animation: fadeInUp 0.6s ease forwards;
+     opacity: 0;
+     transform: translateY(18px);
+ }
+
+ .page-legal-card {
+     background: #0b1120;
+     border-radius: 16px;
+     border: 1px solid #1f2937;
+     padding: 24px 26px 28px;
+     box-shadow: 0 18px 40px rgba(15, 23, 42, 0.7);
+ }
+
+ @keyframes fadeInUp {
+     0% { opacity: 0; transform: translateY(18px); }
+     100% { opacity: 1; transform: translateY(0); }
+ }
+
+ .legal-back-btn {
+     display: inline-block;
+     margin-bottom: 22px;
+     padding: 10px 16px;
+     background: #1e293b;
+     border-radius: 10px;
+     color: #e5e7eb;
+     border: 1px solid #334155;
+     font-size: 0.9rem;
+     transition: .25s;
+ }
+
+ .legal-back-btn:hover {
+     background: #334155;
+     transform: translateX(-3px);
+ }
+
+ .lang-switch {
+     display: flex;
+     gap: 12px;
+     margin-bottom: 16px;
+ }
+
+ .lang-switch a {
+     color: #9ca3af;
+     font-weight: 500;
+     font-size: 0.9rem;
+     transition: .2s;
+ }
+
+ .lang-switch a:hover {
+     color: #fff;
+ }
+
+ .legal-actions {
+     margin-top: 24px;
+     display: flex;
+     flex-wrap: wrap;
+     gap: 10px;
+     justify-content: flex-end;
+ }
+
+ .legal-pdf-btn {
+     padding: 8px 14px;
+     border-radius: 999px;
+     border: 1px solid #4b5563;
+     background: #020617;
+     color: #e5e7eb;
+     font-size: 0.85rem;
+     cursor: pointer;
+     text-decoration: none;
+     transition: .2s;
+ }
+
+ .legal-pdf-btn:hover {
+     border-color: #818cf8;
+     color: #fff;
+ }
+
+
+.social-icons {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+/* контейнер под иконку — круг */
+.social-icons a {
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #0f172a; /* тёмный круг */
+    border-radius: 50%;
+    transition:
+        transform 0.28s ease,
+        box-shadow 0.28s ease,
+        background 0.28s ease,
+        opacity 0.28s ease;
+    opacity: 0.85;
+}
+
+/* сами SVG */
+.social-icons a img {
+    width: 20px;
+    height: 20px;
+    pointer-events: none;
+}
+
+/* hover эффект */
+.social-icons a:hover {
+    transform: scale(1.18);
+    background: #1e293b; /* немного светлее фон */
+    opacity: 1;
+    box-shadow:
+        0 0 10px rgba(129, 140, 248, 0.6),
+        0 0 20px rgba(79, 70, 229, 0.45);
+}
+
+
 </style>

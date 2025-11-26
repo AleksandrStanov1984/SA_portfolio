@@ -387,6 +387,38 @@ eingesetzter Lösungen für Stabilität im Alltag.</li>
 'modal_close'            => 'Schließen',
 'no_html_allowed'        => 'HTML-Tags sind im Feedback nicht erlaubt.',
 
+'footer_rights' => 'Alle Rechte vorbehalten.',
+'footer_impressum' => 'Impressum',
+'footer_privacy' => 'Datenschutz',
+
+/* Legal */
+'legal_title_impressum' => 'Impressum',
+'legal_title_privacy' => 'Datenschutzerklärung',
+
+'legal_intro_impressum' => 'Angaben gemäß § 5 TMG.',
+'legal_intro_privacy' => 'Informationen zum Datenschutz gemäß DSGVO.',
+
+'legal_company' => 'Verantwortlich',
+'legal_name' => 'Oleksandr Stanov',
+'legal_address' => '78628 Rottweil, Baden-Württemberg, Deutschland',
+
+'legal_contact' => 'Kontakt',
+'legal_email' => 'E-Mail',
+'legal_phone' => 'Telefon',
+
+'legal_disclaimer' => 'Haftungsausschluss',
+'legal_disclaimer_text' => 'Alle Inhalte wurden mit größter Sorgfalt erstellt. Für Richtigkeit, Vollständigkeit und Aktualität kann jedoch keine Gewähr übernommen werden.',
+
+'legal_privacy_text' => 'Ich verarbeite personenbezogene Daten ausschließlich im Rahmen der DSGVO und nur, wenn dies zur Bereitstellung der Website notwendig ist.',
+
+'footer_rights' => 'Alle Rechte vorbehalten.',
+'footer_impressum' => 'Impressum',
+'footer_privacy' => 'Datenschutz',
+
+'back' => 'Zurück',
+'legal_pdf_download' => 'Als PDF herunterladen',
+
+
 
 
 

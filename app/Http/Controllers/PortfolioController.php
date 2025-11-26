@@ -25,6 +25,9 @@ class PortfolioController extends Controller
 
     public function index(string $locale = 'de')
     {
+    // Запоминаем начальный язык пользователя
+        session(['portfolio_start_locale' => $locale]);
+
         app()->setLocale($locale);
 
         $reviews = Review::where('approved', true)

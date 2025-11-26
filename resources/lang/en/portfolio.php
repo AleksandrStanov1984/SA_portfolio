@@ -362,6 +362,37 @@ to ensure stability and reliability.</li>
 'btn_write_review' => 'Write a review',
 'reviews_title' => 'Feedback & Testimonials',
 
+'footer_rights' => 'All rights reserved.',
+'footer_impressum' => 'Imprint',
+'footer_privacy' => 'Privacy Policy',
+
+/* Legal */
+'legal_title_impressum' => 'Imprint',
+'legal_title_privacy' => 'Privacy Policy',
+
+'legal_intro_impressum' => 'Mandatory information according to German law (TMG).',
+'legal_intro_privacy' => 'Information about data processing in accordance with GDPR.',
+
+'legal_company' => 'Responsible Person',
+'legal_name' => 'Oleksandr Stanov',
+'legal_address' => '78628 Rottweil, Baden-Württemberg, Germany',
+
+'legal_contact' => 'Contact',
+'legal_email' => 'Email',
+'legal_phone' => 'Phone',
+
+'legal_disclaimer' => 'Disclaimer',
+'legal_disclaimer_text' => 'All content has been created with great care. However, I cannot guarantee the accuracy, completeness or timeliness of the information.',
+
+'legal_privacy_text' => 'Personal data is processed exclusively in accordance with GDPR and only if necessary for providing this website.',
+
+'footer_rights' => 'All rights reserved.',
+'footer_impressum' => 'Imprint',
+'footer_privacy' => 'Privacy Policy',
+
+'back' => 'Back',
+'legal_pdf_download' => 'Download as PDF',
+
 
 
 

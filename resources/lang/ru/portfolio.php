@@ -357,6 +357,39 @@ Creedle Eco-Platform — это модульная облачная систем
 'btn_write_review' => 'Написать отзыв',
 'reviews_title' => 'Feedback & Testimonials',
 
+'footer_rights' => 'Все права защищены.',
+'footer_impressum' => 'Импрессум',
+'footer_privacy' => 'Политика конфиденциальности',
+
+/* Legal */
+'legal_title_impressum' => 'Импрессум',
+'legal_title_privacy' => 'Политика конфиденциальности',
+
+'legal_intro_impressum' => 'Обязательная информация согласно немецкому законодательству (TMG).',
+'legal_intro_privacy' => 'Информация о защите данных согласно GDPR.',
+
+'legal_company' => 'Ответственное лицо',
+'legal_name' => 'Oleksandr Stanov',
+'legal_address' => '78628 Ротвайль, Баден-Вюртемберг, Германия',
+
+'legal_contact' => 'Контакты',
+'legal_email' => 'E-mail',
+'legal_phone' => 'Телефон',
+
+'legal_disclaimer' => 'Отказ от ответственности',
+'legal_disclaimer_text' => 'Контент создан с максимальной тщательностью, однако точность, полнота и актуальность не могут быть гарантированы.',
+
+'legal_privacy_text' => 'Персональные данные обрабатываются исключительно в соответствии с GDPR и только в объёме, необходимом для работы сайта.',
+
+'footer_rights' => 'Все права защищены.',
+'footer_impressum' => 'Импрессум',
+'footer_privacy' => 'Защита данных',
+
+'back' => 'Назад',
+'legal_pdf_download' => 'Скачать в PDF',
+
+
+
 
 
 

@@ -1,0 +1,14 @@
+# Impressum
+node scripts/make-pdf.cjs http://127.0.0.1:8000/de/impressum > public/pdf/impressum-de.pdf
+node scripts/make-pdf.cjs http://127.0.0.1:8000/en/impressum > public/pdf/impressum-en.pdf
+node scripts/make-pdf.cjs http://127.0.0.1:8000/ru/impressum > public/pdf/impressum-ru.pdf
+
+# Datenschutz
+node scripts/make-pdf.cjs http://127.0.0.1:8000/de/datenschutz > public/pdf/datenschutz-de.pdf
+node scripts/make-pdf.cjs http://127.0.0.1:8000/en/datenschutz > public/pdf/datenschutz-en.pdf
+node scripts/make-pdf.cjs http://127.0.0.1:8000/ru/datenschutz > public/pdf/datenschutz-ru.pdf
+
+
+php artisan view:clear
+php artisan route:clear
+php artisan optimize:clear
