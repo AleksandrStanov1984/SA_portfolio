@@ -366,6 +366,10 @@ eingesetzter Lösungen für Stabilität im Alltag.</li>
 </ul>
 ',
 
+'btn_write_review' => 'Bewertung schreiben',
+'reviews_title' => 'Feedback & Testimonials',
+
+
 
 
 

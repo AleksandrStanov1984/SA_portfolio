@@ -2,31 +2,26 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PortfolioController;
+use App\Http\Controllers\ReviewController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-*/
-
-// Корень ведёт на язык по умолчанию
+// Язык по умолчанию
 Route::redirect('/', '/de');
 
-// Один маршрут для портфолио
+// Страница портфолио
 Route::get('/{locale}', [PortfolioController::class, 'index'])
     ->name('portfolio')
     ->whereIn('locale', ['de', 'en', 'ru']);
 
-// Маршрут для отправки отзывов
-Route::post('/{locale}/review', [PortfolioController::class, 'storeReview'])
-    ->name('portfolio.review.store')
+// ✔ Единственный рабочий маршрут отзывов
+Route::post('/{locale}/reviews/store', [ReviewController::class, 'store'])
+    ->name('reviews.store')
     ->whereIn('locale', ['de', 'en', 'ru']);
 
-// отдельный AJAX-метод для клика по звёздам
+// Ajax нажатия звёзд
 Route::post('/{locale}/portfolio/rating-click', [PortfolioController::class, 'rateClick'])
     ->name('portfolio.review.rate');
 
-// Маршрут для PDF
+// PDF
 Route::get('/{locale}/portfolio.pdf', [PortfolioController::class, 'downloadPdf'])
     ->name('portfolio.pdf')
     ->whereIn('locale', ['de', 'en', 'ru']);

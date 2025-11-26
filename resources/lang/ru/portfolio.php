@@ -354,6 +354,9 @@ Creedle Eco-Platform — это модульная облачная систем
 </ul>
 ',
 
+'btn_write_review' => 'Написать отзыв',
+'reviews_title' => 'Feedback & Testimonials',
+
 
 
 

@@ -42,7 +42,7 @@
              data-modal-id="modal-mrs"
              data-modal-title="@lang('portfolio.proj_mrs_title')">
         <div class="project-image-wrapper">
-            <img src="{{ asset('img/cards/card_6.png') }}" alt="MRS Test Systems">
+            <img src="{{ asset('img/cards/card_2.png') }}" alt="MRS Test Systems">
         </div>
         <h3>@lang('portfolio.proj_mrs_title')</h3>
         <p class="project-meta">@lang('portfolio.proj_mrs_meta')</p>

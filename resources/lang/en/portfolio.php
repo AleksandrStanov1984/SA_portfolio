@@ -359,6 +359,8 @@ to ensure stability and reliability.</li>
 </ul>
 ',
 
+'btn_write_review' => 'Write a review',
+'reviews_title' => 'Feedback & Testimonials',
 
 
 
