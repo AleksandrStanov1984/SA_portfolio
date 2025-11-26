@@ -1,5 +1,5 @@
 {{-- resources/views/portfolio.blade.php --}}
-@extends('layout')
+@extends('layouts.app')
 
 @section('title', 'Oleksandr Stanov – Full Stack & .NET Developer')
 

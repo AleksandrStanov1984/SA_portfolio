@@ -1,14 +1,4 @@
-{{-- resources/views/layout.blade.php --}}
-<!DOCTYPE html>
-<html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <title>@yield('title', 'Oleksandr Stanov – Portfolio')</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description"
-          content="Full Stack & .NET Developer mit Erfahrung in E-Commerce, Telekommunikation, Embedded und industriellen Testsystemen.">
-
-    <style>
+<style>
         :root {
             --bg: #050816;
             --bg-alt: #0b1020;
@@ -100,7 +90,6 @@
         }
     }
 
-
         .btn {
             display: inline-flex;
             align-items: center;
@@ -179,11 +168,6 @@
             transform: translateY(-2px) scale(1.03);
         }
 
-    /* === SKILLS CAROUSEL === */
-
-/* === Hover эффект для блоков опыта === */
-
-/* Увеличение только для блока Berufserfahrung */
 /* === FULL BLOCK HOVER FOR EXPERIENCE === */
 
 .experience-card {
@@ -205,8 +189,6 @@
 .experience-card * {
     transform: none !important;
 }
-
-
 
   /* === SKILLS CAROUSEL — ФИНАЛ === */
 
@@ -255,14 +237,13 @@
     z-index: 50;
 }
 
-.skills-arrow.left { left: -10px; }
-.skills-arrow.right { right: -10px; }
+.skills-arrow.left {
+left: -10px;
+ }
 
-
-
-
-  /* === SKILLS CAROUSEL — ФИНАЛ === */
-
+.skills-arrow.right {
+right: -10px;
+}
 
 /* --- PROJECT CARD IMAGE FIX --- */
 
@@ -293,9 +274,6 @@
     transform: scale(1.04);
     opacity: 0.96;
 }
-
-
-
 
 /* --- ВЫРАВНИВАНИЕ ТЕКСТОВ — ОЧЕНЬ ВАЖНО --- */
 .card .project-meta {
@@ -423,9 +401,6 @@
     max-height: 6.8em;            /* под 4 строки */
 }
 
-/* === MASTER FIX — ЧТОБЫ НИЧТО НЕ РЕЗАЛО УВЕЛИЧЕНИЕ В СЕКЦИИ SKILLS === */
-
-
 /* --- HOVER EFFECT for ABOUT & EXPERIENCE blocks --- */
 
 .about-card,
@@ -475,7 +450,6 @@
     overflow: visible;
 }
 
-
 /* --- ТЕНЬ + УВЕЛИЧЕНИЕ ПРИ НАВЕДЕНИИ (как на других аккордионах) --- */
 .accordion-card:hover {
     transform: scale(1.03);
@@ -486,134 +460,4 @@
     z-index: 50;
 }
 
-
-
-
-
 </style>
-
-</head>
-<body>
-<div class="page">
-    <header>
-        <div class="logo">O. STANOV · PORTFOLIO</div>
-        <nav style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
-            <a href="#about">@lang('portfolio.nav_about')</a>
-            <a href="#skills">@lang('portfolio.nav_skills')</a>
-            <a href="#projects">@lang('portfolio.nav_projects')</a>
-            <a href="#experience">@lang('portfolio.nav_experience')</a>
-            <a href="#contact">@lang('portfolio.nav_contact')</a>
-
-            {{-- переключатель языков --}}
-            <span style="width:1px;height:18px;background:#374151;display:inline-block;"></span>
-            @php
-                $currentLocale = $locale ?? app()->getLocale();
-            @endphp
-            <a href="{{ route('portfolio', ['locale' => 'de']) }}"
-               style="{{ $currentLocale === 'de' ? 'font-weight:600;color:#e5e7eb;' : '' }}">
-                DE
-            </a>
-            <a href="{{ route('portfolio', ['locale' => 'en']) }}"
-               style="{{ $currentLocale === 'en' ? 'font-weight:600;color:#e5e7eb;' : '' }}">
-                EN
-            </a>
-            <a href="{{ route('portfolio', ['locale' => 'ru']) }}"
-               style="{{ $currentLocale === 'ru' ? 'font-weight:600;color:#e5e7eb;' : '' }}">
-                RU
-            </a>
-        </nav>
-    </header>
-
-
-    @yield('content')
-
-    <footer style="margin-top:40px;padding:20px 0;text-align:center;
-                   font-size:0.85rem;color:#6b7280;border-top:1px solid #1f2937;">
-        © {{ date('Y') }} Oleksandr Stanov — All rights reserved.
-    </footer>
-
-
-
-</div>
-
-<script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-</script>
-
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-    document.querySelectorAll(".accordion-card").forEach(card => {
-        const header = card.querySelector(".accordion-header");
-        const body = card.querySelector(".accordion-body");
-        const arrow = card.querySelector(".accordion-arrow");
-
-        if (!header || !body) return;
-
-        header.addEventListener("click", () => {
-            const isOpen = body.classList.contains("open");
-
-            if (isOpen) {
-                body.classList.remove("open");
-                card.classList.remove("open");
-                body.style.maxHeight = "0px";
-                arrow.style.transform = "rotate(0deg)";
-            } else {
-                body.classList.add("open");
-                card.classList.add("open");
-                body.style.maxHeight = body.scrollHeight + "px";
-                arrow.style.transform = "rotate(90deg)";
-            }
-        });
-
-        // Если аккордион открыт по умолчанию
-        if (body.classList.contains("open")) {
-            body.style.maxHeight = body.scrollHeight + "px";
-            arrow.style.transform = "rotate(90deg)";
-        }
-    });
-});
-</script>
-
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-
-    const carousel = document.getElementById("skills-carousel");
-    const prev = document.getElementById("skills-prev");
-    const next = document.getElementById("skills-next");
-
-    const cards = [...carousel.children];
-    const cardWidth = 260 + 20; // ширина + gap
-    let index = 0;
-
-    // Дублируем карточки (чтобы хватало для бесконечной прокрутки)
-    cards.forEach(c => carousel.appendChild(c.cloneNode(true)));
-
-    function update() {
-        carousel.style.transform = `translateX(${-index * cardWidth}px)`;
-    }
-
-    next.addEventListener("click", () => {
-        index++;
-        if (index >= cards.length) index = 0;
-        update();
-    });
-
-    prev.addEventListener("click", () => {
-        index--;
-        if (index < 0) index = cards.length - 1;
-        update();
-    });
-
-});
-
-</script>
-
-
-
-
-
-
-
-
-</body>
-</html>

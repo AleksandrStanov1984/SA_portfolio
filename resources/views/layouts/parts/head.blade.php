@@ -1,0 +1,9 @@
+<meta charset="UTF-8">
+<title>@yield('title', 'Oleksandr Stanov – Portfolio')</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta name="description"
+      content="Full Stack & .NET Developer mit Erfahrung in E-Commerce, Telekommunikation, Embedded und industriellen Testsystemen.">
+
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
