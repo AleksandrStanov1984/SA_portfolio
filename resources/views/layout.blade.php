@@ -472,9 +472,8 @@
 }
 
 .accordion-body.open {
-    padding-top: 14px !important; /* было раньше */
+    overflow: visible;
 }
-
 
 
 /* --- ТЕНЬ + УВЕЛИЧЕНИЕ ПРИ НАВЕДЕНИИ (как на других аккордионах) --- */
