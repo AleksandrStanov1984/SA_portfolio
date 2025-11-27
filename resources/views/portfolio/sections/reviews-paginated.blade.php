@@ -10,4 +10,4 @@
 </div>
 
 @include('portfolio.modals.modal-reviews')
-@include('portfolio.reviews.scripts.script')
+@include('portfolio.reviews.scripts.script-reviews')

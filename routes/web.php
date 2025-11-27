@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\ReviewController;
+use App\Http\Controllers\ContactController;
 
 // Язык по умолчанию
 Route::redirect('/', '/de');
@@ -12,7 +13,7 @@ Route::get('/{locale}', [PortfolioController::class, 'index'])
     ->name('portfolio')
     ->whereIn('locale', ['de', 'en', 'ru']);
 
-// ✔ Единственный рабочий маршрут отзывов
+// ✔ Рабочий маршрут отзывов
 Route::post('/{locale}/reviews/store', [ReviewController::class, 'store'])
     ->name('reviews.store')
     ->whereIn('locale', ['de', 'en', 'ru']);
@@ -36,7 +37,7 @@ Route::get('/{locale}/datenschutz', function (string $locale) {
     return view('legal.datenschutz', ['locale' => $locale]);
 })->name('datenschutz');
 
-// Отдаём заранее сгенерированные PDF-файлы
+// Отдаём PDF
 Route::get('/{locale}/impressum.pdf', function (string $locale) {
     return response()->file(public_path("pdf/impressum-{$locale}.pdf"));
 })->name('impressum.pdf');
@@ -45,4 +46,7 @@ Route::get('/{locale}/datenschutz.pdf', function (string $locale) {
     return response()->file(public_path("pdf/datenschutz-{$locale}.pdf"));
 })->name('datenschutz.pdf');
 
-
+// ✔ Контактная форма — POST
+Route::post('/{locale}/contact/send', [ContactController::class, 'send'])
+    ->name('contact.send')
+    ->whereIn('locale', ['de', 'en', 'ru']);

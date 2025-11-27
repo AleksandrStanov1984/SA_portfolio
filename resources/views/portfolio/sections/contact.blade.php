@@ -14,3 +14,6 @@
 
     </div>
 </section>
+
+@include('portfolio.modals.modal-contact')
+@include('portfolio.contact.scripts.script-contact')

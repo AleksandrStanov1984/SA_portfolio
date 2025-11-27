@@ -67,5 +67,61 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 });
-
 </script>
+
+<script>
+window.showTopAlert = function(message, type = 'success') {
+
+    const bar = document.getElementById('topAlert');
+    const text = document.getElementById('topAlertText');
+
+    text.textContent = message;
+
+    if (type === 'success') {
+        bar.style.background = '#22c55e'; // зелёный
+    } else {
+        bar.style.background = '#dc2626'; // красный
+    }
+
+    bar.style.top = "0px";
+
+    setTimeout(() => {
+        bar.style.top = "-70px";
+    }, 5000);
+}
+</script>
+
+<script>
+window.showAlert = function (text, type = "success") {
+    const bar = document.getElementById('alertBar');
+    if (!bar) return;
+
+    bar.textContent = text;
+
+    // Мягкие цвета под тёмный фон
+    if (type === "success") {
+        // мягкий зелёный / бирюзовый
+        bar.style.background = "linear-gradient(90deg, #059669, #22c55e)";
+        bar.style.color = "#ecfdf5"; // чуть теплее, чем чисто белый
+    } else {
+        // приглушённый тёплый красный
+        bar.style.background = "linear-gradient(90deg, #b91c1c, #f97373)";
+        bar.style.color = "#fef2f2";
+    }
+
+    // старт слева
+    bar.style.left = "-100%";
+
+    // выезд слева направо (2 сек)
+    setTimeout(() => {
+        bar.style.left = "0";
+    }, 10);
+
+    // 2 сек анимации + 3 сек пауза = 5 сек
+    setTimeout(() => {
+        // уезжаем обратно (2 сек по transition)
+        bar.style.left = "-100%";
+    }, 5000);
+};
+</script>
+

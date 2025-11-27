@@ -31,7 +31,6 @@ class PortfolioController extends Controller
         app()->setLocale($locale);
 
         $reviews = Review::where('approved', true)
-            //->where('locale', $locale)
             ->latest()
             ->paginate(5);
 

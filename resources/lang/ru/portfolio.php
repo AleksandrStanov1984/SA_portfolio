@@ -388,6 +388,32 @@ Creedle Eco-Platform — это модульная облачная систем
 'back' => 'Назад',
 'legal_pdf_download' => 'Скачать в PDF',
 
+'contact_form_title' => 'Отправить сообщение',
+'contact_form_name' => 'Имя',
+'contact_form_email' => 'E-mail',
+'contact_form_topic' => 'Тема',
+'contact_form_message' => 'Сообщение',
+'contact_form_send' => 'Отправить',
+
+'contact_topic_landing'   => 'Лендинг / промо-сайт',
+'contact_topic_portfolio' => 'Портфолио-сайт',
+'contact_topic_corporate' => 'Корпоративный сайт',
+'contact_topic_shop'      => 'Интернет-магазин',
+'contact_topic_redesign'  => 'Редизайн / доработка',
+'contact_form_phone' => 'Номер телефона',
+'mail_phone' => 'Телефон',
+'contact_phone_placeholder' => '+49010000001',
+
+
+
+'mail_name'     => 'Имя',
+'mail_email'    => 'E-mail',
+'mail_topic'    => 'Тема',
+'mail_message'  => 'Сообщение',
+
+'alert_success' => 'Сообщение успешно отправлено ✔',
+'alert_error'   => 'Ошибка при отправке сообщения ❌',
+
 
 
 

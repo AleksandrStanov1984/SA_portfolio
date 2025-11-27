@@ -418,6 +418,34 @@ eingesetzter Lösungen für Stabilität im Alltag.</li>
 'back' => 'Zurück',
 'legal_pdf_download' => 'Als PDF herunterladen',
 
+'contact_form_title' => 'Nachricht senden',
+'contact_form_name' => 'Name',
+'contact_form_email' => 'E-Mail',
+'contact_form_topic' => 'Thema',
+'contact_form_message' => 'Nachricht',
+'contact_form_send' => 'Nachricht senden',
+
+'contact_topic_landing'   => 'Landing / Promo Website',
+'contact_topic_portfolio' => 'Portfolio Website',
+'contact_topic_corporate' => 'Unternehmensseite',
+'contact_topic_shop'      => 'Online-Shop',
+'contact_topic_redesign'  => 'Redesign / Überarbeitung',
+'contact_form_phone' => 'Telefonnummer',
+'mail_phone' => 'Telefon',
+'contact_phone_placeholder' => '+49010000001',
+
+
+
+
+'mail_name'     => 'Name',
+'mail_email'    => 'E-Mail',
+'mail_topic'    => 'Thema',
+'mail_message'  => 'Nachricht',
+
+'alert_success' => 'Nachricht wurde erfolgreich gesendet ✔',
+'alert_error'   => 'Fehler beim Senden ❌',
+
+
 
 
 

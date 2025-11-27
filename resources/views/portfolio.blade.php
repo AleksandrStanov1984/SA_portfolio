@@ -63,11 +63,6 @@
     {{-- SKILLS --}}
     @include('portfolio.sections.skills')
 
-    {{-- EXPERIENCE --}}
-    <section id="experience">
-        @include('portfolio.sections.experience')
-    </section>
-
     {{-- PROJECTS --}}
     <section id="projects">
         <h2 class="section-title">@lang('portfolio.projects_title')</h2>
@@ -75,6 +70,11 @@
 
         @include('portfolio.sections.projects-grid')
         @include('portfolio.sections.project-modals')
+    </section>
+
+    {{-- EXPERIENCE --}}
+    <section id="experience">
+        @include('portfolio.sections.experience')
     </section>
 
     {{-- REVIEWS --}}

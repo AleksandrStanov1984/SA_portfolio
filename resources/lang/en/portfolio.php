@@ -393,6 +393,33 @@ to ensure stability and reliability.</li>
 'back' => 'Back',
 'legal_pdf_download' => 'Download as PDF',
 
+'contact_form_title' => 'Send a Message',
+'contact_form_name' => 'Name',
+'contact_form_email' => 'E-Mail',
+'contact_form_topic' => 'Topic',
+'contact_form_message' => 'Message',
+'contact_form_send' => 'Send Message',
+
+'contact_topic_landing'   => 'Landing / Promo Website',
+'contact_topic_portfolio' => 'Portfolio Website',
+'contact_topic_corporate' => 'Corporate Website',
+'contact_topic_shop'      => 'Online Store',
+'contact_topic_redesign'  => 'Redesign / Update',
+'contact_form_phone' => 'Phone number',
+'mail_phone' => 'Phone',
+'contact_phone_placeholder' => '+49010000001',
+
+
+
+
+'mail_name'     => 'Name',
+'mail_email'    => 'Email',
+'mail_topic'    => 'Topic',
+'mail_message'  => 'Message',
+
+'alert_success' => 'Message sent successfully ✔',
+'alert_error'   => 'Failed to send message ❌',
+
 
 
 
