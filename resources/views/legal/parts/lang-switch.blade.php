@@ -1,10 +1,23 @@
-<div class="lang-switch">
-    <a href="{{ route($routeName, ['locale' => 'de']) }}"
-       style="{{ app()->getLocale() === 'de' ? 'color:#fff;font-weight:700;' : '' }}">DE</a>
+<div class="locale-switch">
 
-    <a href="{{ route($routeName, ['locale' => 'en']) }}"
-       style="{{ app()->getLocale() === 'en' ? 'color:#fff;font-weight:700;' : '' }}">EN</a>
+    @php
+        $current = $locale ?? app()->getLocale();
+        $route = $routeName ?? Route::currentRouteName();
+    @endphp
 
-    <a href="{{ route($routeName, ['locale' => 'ru']) }}"
-       style="{{ app()->getLocale() === 'ru' ? 'color:#fff;font-weight:700;' : '' }}">RU</a>
+    <a href="{{ route($route, ['locale' => 'de']) }}"
+       class="locale-link {{ $current === 'de' ? 'active' : '' }}">
+        DE
+    </a>
+
+    <a href="{{ route($route, ['locale' => 'en']) }}"
+       class="locale-link {{ $current === 'en' ? 'active' : '' }}">
+        EN
+    </a>
+
+    <a href="{{ route($route, ['locale' => 'ru']) }}"
+       class="locale-link {{ $current === 'ru' ? 'active' : '' }}">
+        RU
+    </a>
+
 </div>

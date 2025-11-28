@@ -58,14 +58,11 @@
 
         nav a {
             padding: 6px 10px;
-            border-radius: 999px;
-            border: 1px solid transparent;
         }
 
         nav a:hover {
-            border-color: rgba(148, 163, 184, 0.4);
-            text-decoration: none;
             color: #f9fafb;
+            text-decoration: none;
         }
 
     .site-footer {
@@ -749,6 +746,61 @@ right: -10px;
     border: 1px solid #f87171 !important;
     box-shadow: 0 0 0 3px rgba(248,113,113,0.25) !important;
 }
+
+/* =========================================================
+   ЕДИНЫЙ СТИЛЬ ЯЗЫКОВОГО ПЕРЕКЛЮЧАТЕЛЯ (для header и legal)
+   ========================================================= */
+
+.lang-switch a,
+.locale-switch a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 6px 10px;
+    border-radius: 999px;
+
+    border: 1px solid transparent;
+    color: #9ca3af;
+    font-weight: 400;
+    font-size: 0.9rem;
+
+    transition:
+        border-color .18s ease,
+        color .18s ease,
+        transform .18s ease;
+}
+
+/* hover — кружок и движение */
+.lang-switch a:hover,
+.locale-switch a:hover {
+    border-color: rgba(148,163,184,0.4);
+    color: #f9fafb;
+    transform: translateY(-1px);
+}
+
+/* активный язык — кружок */
+.lang-switch a.active,
+.locale-switch a.active {
+    border-color: rgba(148,163,184,0.4);
+    color: #e5e7eb;
+    font-weight: 600;
+}
+
+/* отключить border у active, если hover НЕ на нём */
+/* работает и в header и на legal страницах */
+.locale-switch:hover a.active:not(:hover),
+.lang-switch:hover a.active:not(:hover) {
+    border-color: transparent !important;
+}
+
+
+
+
+
+
+
+
 
 
 

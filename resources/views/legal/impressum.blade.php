@@ -6,11 +6,19 @@
 <div class="page-legal">
     <div class="page-legal-card">
 
-        @include('legal.parts.back')
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:18px;">
 
-        @include('legal.parts.lang-switch', [
-            'routeName' => 'impressum'
-        ])
+            {{-- Back button LEFT --}}
+            <div>
+                @include('legal.parts.back')
+            </div>
+
+            {{-- Language switch RIGHT --}}
+            <div>
+                @include('legal.parts.lang-switch', ['routeName' => 'impressum'])
+            </div>
+
+        </div>
 
         @include('legal.parts.title-impressum')
 

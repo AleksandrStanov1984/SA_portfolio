@@ -6,11 +6,17 @@
 <div class="page-legal">
     <div class="page-legal-card">
 
-        @include('legal.parts.back')
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:18px;">
 
-        @include('legal.parts.lang-switch', [
-            'routeName' => 'datenschutz'
-        ])
+            <div>
+                @include('legal.parts.back')
+            </div>
+
+            <div>
+                @include('legal.parts.lang-switch', ['routeName' => 'datenschutz'])
+            </div>
+
+        </div>
 
         @include('legal.parts.title-privacy')
 

@@ -9,21 +9,25 @@
         <a href="#experience">@lang('portfolio.nav_experience')</a>
         <a href="#contact">@lang('portfolio.nav_contact')</a>
 
-        <span style="width:1px;height:18px;background:#374151;display:inline-block;"></span>
+    </nav>
 
-        @php $currentLocale = $locale ?? app()->getLocale(); @endphp
+    {{-- Языковой переключатель — ВНЕ nav --}}
+    @php $currentLocale = $locale ?? app()->getLocale(); @endphp
 
+    <div class="locale-switch">
         <a href="{{ route('portfolio',['locale'=>'de']) }}"
-           style="{{ $currentLocale==='de'?'font-weight:600;color:#e5e7eb;':'' }}">
+           class="{{ $currentLocale==='de' ? 'active' : '' }}">
             DE
         </a>
+
         <a href="{{ route('portfolio',['locale'=>'en']) }}"
-           style="{{ $currentLocale==='en'?'font-weight:600;color:#e5e7eb;':'' }}">
+           class="{{ $currentLocale==='en' ? 'active' : '' }}">
             EN
         </a>
+
         <a href="{{ route('portfolio',['locale'=>'ru']) }}"
-           style="{{ $currentLocale==='ru'?'font-weight:600;color:#e5e7eb;':'' }}">
+           class="{{ $currentLocale==='ru' ? 'active' : '' }}">
             RU
         </a>
-    </nav>
+    </div>
 </header>

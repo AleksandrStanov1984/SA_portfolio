@@ -16,7 +16,7 @@
 
 </div>
 
-include('layouts.parts.scripts.scripts')
+@include('layouts.parts.scripts.scripts')
 
 </body>
 </html>
