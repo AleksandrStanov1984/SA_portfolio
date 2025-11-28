@@ -463,7 +463,7 @@ eingesetzter Lösungen für Stabilität im Alltag.</li>
 'err_message_required' => 'Bitte schreiben Sie eine Nachricht.',
 
 'counter' => ':current / :max',
-'contact_topic_other' => 'Andere'
+'contact_topic_other' => 'Andere',
 
 
 

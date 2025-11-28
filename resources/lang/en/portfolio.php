@@ -438,7 +438,9 @@ to ensure stability and reliability.</li>
 'err_message_required' => 'Please type a message.',
 
 'counter' => ':current / :max',
-'contact_topic_other' => 'Other'
+'contact_topic_other' => 'Other',
+
+
 
 
 

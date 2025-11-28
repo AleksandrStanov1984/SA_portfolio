@@ -432,7 +432,8 @@ Creedle Eco-Platform — это модульная облачная систем
 'err_message_required' => 'Введите сообщение.',
 
 'counter' => ':current / :max',
-'contact_topic_other' => 'Другое'
+'contact_topic_other' => 'Другое',
+
 
 
 
