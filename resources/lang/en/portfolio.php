@@ -409,6 +409,12 @@ to ensure stability and reliability.</li>
 'mail_phone' => 'Phone',
 'contact_phone_placeholder' => '+49010000001',
 
+'contact_autoreply_subject' => 'Your message has been received',
+'contact_autoreply_hello'   => 'Hello :name,',
+'contact_autoreply_text'    => 'Thank you for your message! I will reply shortly.',
+'contact_autoreply_topic'   => 'Topic:',
+'contact_autoreply_regards' => 'Best regards,',
+
 
 
 
@@ -420,6 +426,19 @@ to ensure stability and reliability.</li>
 'alert_success' => 'Message sent successfully ✔',
 'alert_error'   => 'Failed to send message ❌',
 
+'chars' => 'characters',
+'max_chars' => 'max :count characters',
+
+'counter' => ':current / :max',
+
+'err_name_required' => 'Please enter your name.',
+'err_email_invalid' => 'Please enter a valid email.',
+'err_phone_invalid' => 'Please enter a valid phone number.',
+'err_topic_required' => 'Please choose a topic.',
+'err_message_required' => 'Please type a message.',
+
+'counter' => ':current / :max',
+'contact_topic_other' => 'Other'
 
 
 

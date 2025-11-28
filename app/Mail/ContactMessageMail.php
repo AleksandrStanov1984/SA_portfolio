@@ -15,11 +15,16 @@ class ContactMessageMail extends Mailable
     public function __construct(array $data)
     {
         $this->data = $data;
+        $this->locale = $data['locale'] ?? 'en';
     }
 
     public function build()
     {
-        return $this->subject('Neue Nachricht vom SA-Portfolio')
-                    ->view('emails.contact-message');
+        app()->setLocale($this->locale);
+
+        return $this
+            ->subject(__('portfolio.mail_admin_subject'))
+            ->view('emails.contact-message')
+            ->with(['data' => $this->data]);
     }
 }

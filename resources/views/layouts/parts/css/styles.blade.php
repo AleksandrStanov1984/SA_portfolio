@@ -586,5 +586,172 @@ right: -10px;
         0 0 20px rgba(79, 70, 229, 0.45);
 }
 
+/* ---- ERROR INPUT ---- */
+.input-error {
+    border: 1px solid #f87171 !important;
+    box-shadow: 0 0 0 2px rgba(248, 113, 113, 0.3);
+}
+
+/* ---- MAX LENGTH LABEL ---- */
+.field-hint {
+    margin-top: 4px;
+    font-size: 0.75rem;
+    color: #9ca3af;
+}
+
+.input-error {
+    border: 1px solid #f87171 !important;
+    box-shadow: 0 0 0 3px rgba(248,113,113,0.25);
+}
+
+/* ---- ERROR BUBBLE ---- */
+
+.error-container {
+    min-height: 22px;
+    margin-top: 4px;
+}
+
+.error-bubble {
+    display: inline-block;
+    background: #fee2e2;
+    color: #991b1b;
+    padding: 6px 12px;
+    font-size: 0.85rem;
+    border-radius: 12px;
+    border-left: 4px solid #ef4444;
+    animation: fadeIn .2s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-4px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ============================================================
+   SUCCESS INPUT STATE — зелёная рамка (валидный ввод)
+   ============================================================ */
+.input-success {
+    border: 1px solid #4ade80 !important;              /* зелёная рамка */
+    box-shadow: 0 0 0 3px rgba(74, 222, 128, 0.25);    /* мягкое свечение */
+    transition: border 0.25s ease, box-shadow 0.25s ease;
+}
+
+
+/* ============================================================
+   ERROR BUBBLE — улучшенная анимация (как iOS)
+   ============================================================ */
+.error-bubble {
+    display: inline-block;
+    background: #fee2e2;
+    color: #991b1b;
+    padding: 6px 12px;
+    font-size: 0.85rem;
+    border-radius: 14px;
+    border-left: 4px solid #ef4444;
+    animation: bubbleIn 0.32s cubic-bezier(0.16, 1, 0.3, 1);
+    transform-origin: left top;
+}
+
+@keyframes bubbleIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-6px) scale(0.92);
+    }
+    60% {
+        opacity: 1;
+        transform: translateY(0) scale(1.03);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+/* ============================================================
+   CHAR COUNTERS — для всех input/textarea
+   ============================================================ */
+.char-counter {
+    font-size: 0.72rem;
+    margin-top: 3px;
+    text-align: right;
+    color: #6b7280;
+    opacity: 0.85;
+}
+
+.char-counter strong {
+    color: #e5e7eb; /* белые цифры */
+}
+
+
+/* ============================================================
+   FIELD GROUP — универсальный контейнер
+   ============================================================ */
+.form-group {
+    margin-bottom: 18px;
+}
+
+.error-container {
+    min-height: 24px;
+    margin-top: 4px;
+}
+
+
+/* ============================================================
+   SPECIAL FIX — при ошибке игнорировать success-рамку
+   ============================================================ */
+.input-error.input-success {
+    border: 1px solid #f87171 !important;
+    box-shadow: 0 0 0 3px rgba(248,113,113,0.25) !important;
+}
+
+/* ============================================================
+   FIX: уменьшение расстояний между полями формы
+   ============================================================ */
+
+.form-group {
+    margin-bottom: 5px !important; /* было 18 — теперь аккуратнее */
+}
+
+.field-hint {
+    margin-top: 2px !important;     /* было 4 — теперь плотнее */
+}
+
+.error-container {
+    min-height: 18px !important;    /* было 22/24 — формирует компактный вид */
+    margin-top: 2px !important;
+}
+
+.char-counter {
+    margin-top: 2px !important;     /* было 3 — уменьшено */
+    font-size: 0.72rem !important;
+}
+
+/* рамки success и error не трогаем — они нормальные */
+.input-success {
+    border: 1px solid #4ade80 !important;
+    box-shadow: 0 0 0 3px rgba(74, 222, 128, 0.25);
+}
+
+.input-error {
+    border: 1px solid #f87171 !important;
+    box-shadow: 0 0 0 3px rgba(248,113,113,0.25);
+}
+
+/* уменьшить пузырь ошибки */
+.error-bubble {
+    padding: 5px 10px !important;
+    font-size: 0.8rem !important;
+    border-radius: 10px !important;
+}
+
+/* чтобы success не перекрывался error */
+.input-error.input-success {
+    border: 1px solid #f87171 !important;
+    box-shadow: 0 0 0 3px rgba(248,113,113,0.25) !important;
+}
+
+
+
+
 
 </style>

@@ -355,7 +355,7 @@ Creedle Eco-Platform — это модульная облачная систем
 ',
 
 'btn_write_review' => 'Написать отзыв',
-'reviews_title' => 'Feedback & Testimonials',
+'reviews_title' => 'Отзывы и рецензии',
 
 'footer_rights' => 'Все права защищены.',
 'footer_impressum' => 'Импрессум',
@@ -404,6 +404,12 @@ Creedle Eco-Platform — это модульная облачная систем
 'mail_phone' => 'Телефон',
 'contact_phone_placeholder' => '+49010000001',
 
+'contact_autoreply_subject' => 'Ваше сообщение получено',
+'contact_autoreply_hello'   => 'Здравствуйте, :name!',
+'contact_autoreply_text'    => 'Спасибо за сообщение! Я получил его и скоро свяжусь с вами.',
+'contact_autoreply_topic'   => 'Тема:',
+'contact_autoreply_regards' => 'С уважением,',
+
 
 
 'mail_name'     => 'Имя',
@@ -414,6 +420,19 @@ Creedle Eco-Platform — это модульная облачная систем
 'alert_success' => 'Сообщение успешно отправлено ✔',
 'alert_error'   => 'Ошибка при отправке сообщения ❌',
 
+'chars' => 'символов',
+'max_chars' => 'макс: :count',
+
+'counter' => ':current / :max',
+
+'err_name_required' => 'Введите имя.',
+'err_email_invalid' => 'Введите корректный email.',
+'err_phone_invalid' => 'Введите корректный телефон.',
+'err_topic_required' => 'Выберите тему.',
+'err_message_required' => 'Введите сообщение.',
+
+'counter' => ':current / :max',
+'contact_topic_other' => 'Другое'
 
 
 

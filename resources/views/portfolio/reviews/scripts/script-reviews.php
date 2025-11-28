@@ -1,4 +1,3 @@
-{{-- resources/views/portfolio/reviews/scripts/script.blade.php --}}
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {

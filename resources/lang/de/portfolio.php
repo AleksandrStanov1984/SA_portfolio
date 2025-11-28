@@ -367,7 +367,7 @@ eingesetzter Lösungen für Stabilität im Alltag.</li>
 ',
 
 'btn_write_review' => 'Bewertung schreiben',
-'reviews_title' => 'Feedback & Testimonials',
+'reviews_title' => 'Feedback und Erfahrungsberichte',
 
 // Reviews
 'reviews_title'          => 'Feedback & Testimonials',
@@ -434,6 +434,12 @@ eingesetzter Lösungen für Stabilität im Alltag.</li>
 'mail_phone' => 'Telefon',
 'contact_phone_placeholder' => '+49010000001',
 
+'contact_autoreply_subject' => 'Ihre Nachricht wurde erhalten',
+'contact_autoreply_hello'   => 'Hallo :name,',
+'contact_autoreply_text'    => 'vielen Dank für Ihre Nachricht! Ich habe sie erhalten und melde mich bald zurück.',
+'contact_autoreply_topic'   => 'Thema:',
+'contact_autoreply_regards' => 'Beste Grüße,',
+
 
 
 
@@ -444,6 +450,21 @@ eingesetzter Lösungen für Stabilität im Alltag.</li>
 
 'alert_success' => 'Nachricht wurde erfolgreich gesendet ✔',
 'alert_error'   => 'Fehler beim Senden ❌',
+
+'chars' => 'Zeichen',
+'max_chars' => 'max :count Zeichen',
+
+'counter' => ':current / :max',
+
+'err_name_required' => 'Bitte geben Sie Ihren Namen ein.',
+'err_email_invalid' => 'Bitte geben Sie eine gültige E-Mail ein.',
+'err_phone_invalid' => 'Bitte geben Sie eine gültige Telefonnummer ein.',
+'err_topic_required' => 'Bitte wählen Sie ein Thema aus.',
+'err_message_required' => 'Bitte schreiben Sie eine Nachricht.',
+
+'counter' => ':current / :max',
+'contact_topic_other' => 'Andere'
+
 
 
 

@@ -1,8 +1,8 @@
-<p>Hallo {{ $data['name'] }},</p>
+<p>@lang('portfolio.contact_autoreply_hello', ['name' => $data['name']])</p>
 
-<p>Vielen Dank für Ihre Nachricht! Ich habe sie erhalten und melde mich in Kürze zurück.</p>
+<p>@lang('portfolio.contact_autoreply_text')</p>
 
-<p><strong>Thema:</strong> {{ $data['topic'] }}</p>
+<p><strong>@lang('portfolio.contact_autoreply_topic')</strong> {{ $data['topic'] }}</p>
 
-<p>Beste Grüße,<br>
+<p>@lang('portfolio.contact_autoreply_regards')<br>
 Oleksandr Stanov</p>

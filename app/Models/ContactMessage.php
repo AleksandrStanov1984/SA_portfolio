@@ -16,5 +16,6 @@ class ContactMessage extends Model
         'topic',
         'message',
         'ip',
+        'locale',
     ];
 }
