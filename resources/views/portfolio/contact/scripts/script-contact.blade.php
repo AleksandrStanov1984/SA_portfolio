@@ -326,5 +326,3 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 </script>
-Теперь и в имени, и в сообщении пробелы будут нормально появляться при вводе, а все остальные проверки/ошибки останутся как были.
-::contentReference[oaicite:0]{index=0}

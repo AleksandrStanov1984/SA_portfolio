@@ -200,7 +200,8 @@ return [
     'reviews_success'        => 'Спасибо! Отзыв сохранён и будет показан после проверки.',
 
         'languages_list' => 'Предпочитаемые языки: немецкий, английский, русский, украинский.',
-            'footer_signature' => 'Дизайн и разработка — Oleksandr Stanov',
+            'footer_signature' => 'Дизайн и разработка — ' . config('app.legal_name')
+,
             'no_html_allowed' => 'HTML-теги в отзыве запрещены.',
 
 'modal_szua_html' => '
@@ -369,7 +370,7 @@ Creedle Eco-Platform — это модульная облачная систем
 'legal_intro_privacy' => 'Информация о защите данных согласно GDPR.',
 
 'legal_company' => 'Ответственное лицо',
-'legal_name' => 'Oleksandr Stanov',
+'legal_name' => config('app.legal_name'),
 'legal_address' => '78628 Ротвайль, Баден-Вюртемберг, Германия',
 
 'legal_contact' => 'Контакты',

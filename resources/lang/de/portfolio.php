@@ -206,7 +206,7 @@ return [
     'reviews_success'        => 'Danke! Dein Feedback wurde gespeichert und wird nach Prüfung angezeigt.',
 
     'languages_list' => 'Bevorzugte Sprachen: Deutsch, Englisch, Russisch, Ukrainisch.',
-        'footer_signature' => 'Design & Entwicklung: Oleksandr Stanov',
+        'footer_signature' => 'Design & Entwicklung - ' . config('app.legal_name'),
         'no_html_allowed' => 'HTML-Tags sind im Feedback nicht erlaubt.',
 
         'modal_szua_html' => '
@@ -399,7 +399,7 @@ eingesetzter Lösungen für Stabilität im Alltag.</li>
 'legal_intro_privacy' => 'Informationen zum Datenschutz gemäß DSGVO.',
 
 'legal_company' => 'Verantwortlich',
-'legal_name' => 'Oleksandr Stanov',
+'legal_name' => config('app.legal_name'),
 'legal_address' => '78628 Rottweil, Baden-Württemberg, Deutschland',
 
 'legal_contact' => 'Kontakt',

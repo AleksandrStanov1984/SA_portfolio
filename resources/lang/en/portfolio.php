@@ -200,7 +200,7 @@ return [
     'reviews_success'        => 'Thank you! Your feedback has been saved and will be shown after review.',
 
         'languages_list' => 'Preferred languages: German, English, Russian, Ukrainian.',
-            'footer_signature' => 'Designed & developed by Oleksandr Stanov',
+            'footer_signature' => 'Designed & developed by ' . config('app.legal_name'),
             'no_html_allowed' => 'HTML tags are not allowed in the feedback.',
 
             'modal_szua_html' => '
@@ -374,7 +374,7 @@ to ensure stability and reliability.</li>
 'legal_intro_privacy' => 'Information about data processing in accordance with GDPR.',
 
 'legal_company' => 'Responsible Person',
-'legal_name' => 'Oleksandr Stanov',
+'legal_name' => config('app.legal_name'),
 'legal_address' => '78628 Rottweil, Baden-Württemberg, Germany',
 
 'legal_contact' => 'Contact',

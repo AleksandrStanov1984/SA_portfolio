@@ -5,4 +5,4 @@
 <p><strong>@lang('portfolio.contact_autoreply_topic')</strong> {{ $data['topic'] }}</p>
 
 <p>@lang('portfolio.contact_autoreply_regards')<br>
-Oleksandr Stanov</p>
+{{ config('app.legal_name') }}</p>
