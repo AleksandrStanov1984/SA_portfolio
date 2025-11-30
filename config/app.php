@@ -86,6 +86,7 @@ return [
     'locale' => 'de',
     'fallback_locale' => 'en',
 
+    'available_locales' => ['de', 'en', 'ru'],
 
     /*
     |--------------------------------------------------------------------------
@@ -185,6 +186,7 @@ return [
 
     'aliases' => Facade::defaultAliases()->merge([
         // 'Example' => App\Facades\Example::class,
+        'Pdf' => Barryvdh\DomPDF\Facade\Pdf::class,
     ])->toArray(),
 
 ];

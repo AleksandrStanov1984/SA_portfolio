@@ -66,4 +66,12 @@ class ContactRequest extends FormRequest
 
         return $data;
     }
+
+    public function expectsJson()
+    {
+        return true;
+    }
+
+
+
 }
