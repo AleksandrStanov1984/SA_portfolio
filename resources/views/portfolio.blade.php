@@ -1,7 +1,7 @@
 {{-- resources/views/portfolio.blade.php --}}
 @extends('layouts.app')
 
-@section('title', 'Oleksandr Stanov – Full Stack & .NET Developer')
+@section('title', env('MY_NAME') . ' – Full Stack & .NET Developer')
 
 @section('content')
 
@@ -17,7 +17,7 @@
             <h1 style="font-size:clamp(2.3rem,4vw,3rem);line-height:1.1;margin-bottom:16px;">
                 <span style="background:linear-gradient(120deg,#a855f7,#4f46e5,#22c55e);
                              -webkit-background-clip:text;color:transparent;">
-                    Oleksandr Stanov
+                    {{ env('MY_NAME') }}
                 </span><br/>
                 {{ __('portfolio.hero_title') }}
             </h1>
@@ -50,7 +50,7 @@
                         rgba(79,70,229,0.9),rgba(8,47,73,0.5),
                         rgba(45,212,191,0.9),rgba(8,47,73,0.5));">
                 <img src="/img/profile/oleksandr-stanov.jpg"
-                     alt="Oleksandr Stanov"
+                     alt="{{ env('MY_NAME') }} "
                      style="width:230px;height:230px;border-radius:999px;
                      border:4px solid #020617;object-fit:cover;">
             </div>
@@ -79,7 +79,17 @@
 
     {{-- REVIEWS --}}
     <section id="reviews">
-        @include('portfolio.sections.reviews-paginated')
+        @include('portfolio.modals.modal-reviews')
+
+        <div class="accordion-card" id="reviewsAccordion">
+
+            @include('portfolio.reviews.header')
+
+            <div id="reviewsBody">
+                @include('portfolio.sections.reviews-paginated')
+            </div>
+
+        </div>
     </section>
 
     {{-- CONTACT --}}
@@ -96,89 +106,7 @@
     ✔ Спасибо за отзыв!
 </div>
 
-{{-- JS --}}
-<script>
-document.addEventListener("DOMContentLoaded", () => {
+@include('portfolio.reviews.scripts.script-reviews')
 
-    const modal = document.getElementById("reviewModal");
-    const modalBox = document.getElementById("reviewModalBox");
-    const openBtn = document.getElementById("openReviewModal");
-    const closeBtn = document.getElementById("closeModal");
-    const form = document.getElementById("reviewForm");
-    const toast = document.getElementById("toastSuccess");
-    const list = document.querySelector(".reviews-list");
-
-    /* OPEN MODAL */
-    openBtn.onclick = () => {
-        modal.style.display = "flex";
-        setTimeout(() => modalBox.style.transform = "scale(1)", 10);
-    };
-
-    /* CLOSE MODAL */
-    closeBtn.onclick = () => {
-        modalBox.style.transform = "scale(0.92)";
-        setTimeout(() => modal.style.display = "none", 200);
-    };
-
-    modal.onclick = e => {
-        if (e.target === modal) {
-            modalBox.style.transform = "scale(0.92)";
-            setTimeout(() => modal.style.display = "none", 200);
-        }
-    };
-
-    /* RATING */
-    document.querySelectorAll(".star-btn-modal").forEach(btn => {
-        btn.onclick = () => {
-            const val = btn.dataset.value;
-            document.getElementById("ratingModal").value = val;
-
-            document.querySelectorAll(".star-btn-modal").forEach(b => {
-                b.style.color = (b.dataset.value <= val ? "#facc15" : "#475569");
-            });
-        };
-    });
-
-    /* AJAX SUBMIT */
-    form.onsubmit = async e => {
-        e.preventDefault();
-
-        const data = new FormData(form);
-        const res = await fetch(form.action, {
-            method: "POST",
-            body: data,
-            headers: { "X-Requested-With": "XMLHttpRequest" }
-        });
-
-        const json = await res.json();
-
-        if (json.review) {
-            const r = json.review;
-
-            const el = document.createElement("div");
-            el.className = "review-card";
-            el.style = "background:#0f172a;border:1px solid #1e293b;border-radius:12px;padding:14px 18px;margin-bottom:10px;";
-
-            el.innerHTML = `
-                <div style="display:flex;justify-content:space-between;align-items:center;">
-                    <span style="font-weight:600;color:white;">${r.name ?? 'Anonymous'}</span>
-                    <span>${"★".repeat(r.rating).replace(/★/g,'<span style=\"color:#facc15\">★</span>')}</span>
-                </div>
-                <p style="color:#cbd5e1;margin-top:6px;">${r.comment}</p>
-            `;
-
-            list.prepend(el);
-
-            modalBox.style.transform = "scale(0.92)";
-            setTimeout(() => modal.style.display = "none", 200);
-
-            toast.style.opacity = "1";
-            setTimeout(() => toast.style.opacity = "0", 2000);
-
-            form.reset();
-        }
-    };
-});
-</script>
 
 

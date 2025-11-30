@@ -4,7 +4,7 @@
 
     {{-- LEFT --}}
     <div>
-        © {{ date('Y') }} Oleksandr Stanov — @lang('portfolio.footer_rights')
+        © {{ date('Y') }} {{ env('MY_NAME') }}  — @lang('portfolio.footer_rights')
     </div>
 
     {{-- CENTER --}}

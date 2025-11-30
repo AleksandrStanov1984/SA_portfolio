@@ -73,3 +73,17 @@ Route::get('/{locale}/datenschutz.pdf', function (string $locale) {
 Route::post('/{locale}/contact/send', [ContactController::class, 'send'])
     ->name('contact.send')
     ->whereIn('locale', ['de', 'en', 'ru']);
+
+    Route::get('/{locale}/reviews/paginated', function (string $locale) {
+        app()->setLocale($locale);
+
+        $reviews = \App\Models\Review::where('approved', true)
+            ->latest()
+            ->paginate(5);
+
+        return view('portfolio.sections.reviews-paginated', [
+            'reviews' => $reviews
+        ]);
+    })->name('reviews.paginated');
+
+

@@ -1,5 +1,6 @@
 <meta charset="UTF-8">
-<title>@yield('title', 'Oleksandr Stanov – Portfolio')</title>
+<title>@yield('title', env('MY_NAME'))</title>
+
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <meta name="description"

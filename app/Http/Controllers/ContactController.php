@@ -42,5 +42,4 @@ class ContactController extends Controller
             return response()->json(['ok' => false], 500);
         }
     }
-
 }
