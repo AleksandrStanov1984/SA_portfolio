@@ -2,58 +2,40 @@ services:
   - type: web
     name: sa-portfolio
     env: docker
-    region: frankfurt
     plan: free
     autoDeploy: true
-
+    branch: main
     envVars:
       - key: APP_ENV
         value: production
-      - key: APP_DEBUG
-        value: false
-      - key: APP_KEY
-        generateValue: true
+      - key: APP_URL
+        value: https://sa-portfolio.onrender.com
+      - key: DB_CONNECTION
+        value: pgsql
+      - key: DB_HOST
+        value: dpg-d4njetogjchc73f798vg-a
+      - key: DB_PORT
+        value: 5432
+      - key: DB_DATABASE
+        value: sa_portfolio_db_indk
+      - key: DB_USERNAME
+        value: sa_portfolio_db_indk_user
+      - key: DB_PASSWORD
+        value: j2fnUIINJzyT7bwzw9zeHsJuaEz5oGedz
 
-      # DB
-      - key: DATABASE_HOST
-        fromDatabase: sa_db
-        property: host
-
-      - key: DATABASE_PORT
-        fromDatabase: sa_db
-        property: port
-
-      - key: DATABASE_NAME
-        fromDatabase: sa_db
-        property: database
-
-      - key: DATABASE_USER
-        fromDatabase: sa_db
-        property: user
-
-      - key: DATABASE_PASSWORD
-        fromDatabase: sa_db
-        property: password
-
-      # MAIL
+      - key: MAIL_MAILER
+        value: smtp
+      - key: MAIL_HOST
+        value: smtp.gmail.com
+      - key: MAIL_PORT
+        value: 465
       - key: MAIL_USERNAME
         value: aleksstanov84@gmail.com
       - key: MAIL_PASSWORD
-        value: your_gmail_smtp_password
-
-
-  - type: worker
-    name: sa-queue-worker
-    env: docker
-    region: frankfurt
-    plan: free
-    autoDeploy: true
-
-    runtime:
-      containerCommand: "php artisan queue:work --sleep=3 --tries=3 --timeout=30"
-
-    envVars:
-      - key: APP_ENV
-        value: production
-      - key: QUEUE_CONNECTION
-        value: database
+        value: xyge emwo nyml jcig
+      - key: MAIL_ENCRYPTION
+        value: ssl
+      - key: MAIL_FROM_ADDRESS
+        value: aleksstanov84@gmail.com
+      - key: MAIL_FROM_NAME
+        value: SA-Portfolio
