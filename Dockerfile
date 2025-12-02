@@ -38,6 +38,14 @@ COPY . .
 # Удаляем старые и собираем новые зависимости
 RUN composer install --no-dev --optimize-autoloader
 
+RUN php artisan storage:link
+
 # Настраиваем права
 RUN chown -R www-data:www-data /var/www/html \
     && chmod -R 775 storage bootstrap/cache
+
+RUN chmod -R 775 storage bootstrap/cache
+
+RUN php artisan migrate --force
+
+
