@@ -4,7 +4,6 @@
 /storage/logs/*
 /storage/framework/cache/*
 /storage/framework/views/*
-/docker
 .env
 .env.local
 .env.development
