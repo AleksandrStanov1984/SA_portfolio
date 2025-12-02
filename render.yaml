@@ -5,26 +5,55 @@ services:
     region: frankfurt
     plan: free
     autoDeploy: true
+
     envVars:
-      - key: APP_KEY
-        generateValue: true
       - key: APP_ENV
         value: production
       - key: APP_DEBUG
         value: false
-      - key: MAIL_MAILER
-        value: smtp
-      - key: MAIL_HOST
-        value: smtp.gmail.com
-      - key: MAIL_PORT
-        value: 465
+      - key: APP_KEY
+        generateValue: true
+
+      # DB
+      - key: DATABASE_HOST
+        fromDatabase: sa_db
+        property: host
+
+      - key: DATABASE_PORT
+        fromDatabase: sa_db
+        property: port
+
+      - key: DATABASE_NAME
+        fromDatabase: sa_db
+        property: database
+
+      - key: DATABASE_USER
+        fromDatabase: sa_db
+        property: user
+
+      - key: DATABASE_PASSWORD
+        fromDatabase: sa_db
+        property: password
+
+      # MAIL
       - key: MAIL_USERNAME
         value: aleksstanov84@gmail.com
       - key: MAIL_PASSWORD
-        value: your_smtp_password
-      - key: MAIL_ENCRYPTION
-        value: ssl
-      - key: MAIL_FROM_ADDRESS
-        value: aleksstanov84@gmail.com
-      - key: MAIL_FROM_NAME
-        value: SA-Portfolio
+        value: your_gmail_smtp_password
+
+
+  - type: worker
+    name: sa-queue-worker
+    env: docker
+    region: frankfurt
+    plan: free
+    autoDeploy: true
+
+    runtime:
+      containerCommand: "php artisan queue:work --sleep=3 --tries=3 --timeout=30"
+
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: QUEUE_CONNECTION
+        value: database
