@@ -534,6 +534,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 </script>
 
+{{-- ======================== --}}
 {{--   PREMIUM BLOCK (FINAL)  --}}
 {{-- ======================== --}}
 <section id="premium" class="pack-section" style="grid-template-columns:1fr 1fr;">
