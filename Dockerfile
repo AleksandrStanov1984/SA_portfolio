@@ -18,8 +18,6 @@ RUN apt-get update && apt-get install -y \
         pdo \
         pdo_pgsql \
         mbstring \
-        tokenizer \
-        xml \
         intl \
         zip
 
