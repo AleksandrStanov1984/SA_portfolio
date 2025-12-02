@@ -165,4 +165,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
 </script>
 
+<script>
+    document.addEventListener("scroll", () => {
+        const header = document.querySelector(".header-fixed");
+
+        if (window.scrollY > 30) {
+            header.style.background = "rgba(15, 23, 42, 0.95)";
+            header.style.boxShadow = "0 4px 14px rgba(0,0,0,0.45)";
+        } else {
+            header.style.background = "rgba(15, 23, 42, 0.70)";
+            header.style.boxShadow = "none";
+        }
+    });
+</script>
 

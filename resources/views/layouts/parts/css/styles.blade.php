@@ -27,6 +27,32 @@
             color: var(--text);
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
+            padding-top: 120px !important;
+        }
+
+        /* ==== FIXED HEADER WITH ROUNDED CORNERS ==== */
+        header {
+            position: fixed;
+            top: 12px;                 /* чуть отступаем вниз от края */
+            left: 50%;
+            transform: translateX(-50%);
+
+            width: 1120px;             /* как .page */
+            max-width: calc(100% - 40px); /* отступы на маленьких экранах */
+            padding: 18px 24px;
+
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(12px);
+            border-radius: 18px;       /* ← ОКРУГЛЕНИЕ */
+            border: 1px solid rgba(255,255,255,0.05);
+            box-shadow: 0 12px 32px rgba(0,0,0,0.45);
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+
+            z-index: 99999;
         }
 
         a { color: inherit; text-decoration: none; }
@@ -38,13 +64,6 @@
             padding: 32px 20px 60px;
         }
 
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 16px;
-            margin-bottom: 40px;
-        }
 
         .logo {
             font-weight: 700;
@@ -819,17 +838,6 @@ right: -10px;
 .nav-link:hover {
     border: 1px solid #4f46e5;
 }
-
-
-
-
-
-
-
-
-
-
-
 
 
 
