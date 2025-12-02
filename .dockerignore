@@ -1,9 +1,10 @@
-vendor
-node_modules
-npm-debug.log
-docker-compose.yml
-Dockerfile
 .git
-.gitignore
-storage/*.key
+/vendor
+/node_modules
+/storage/logs/*
+/storage/framework/cache/*
+/storage/framework/views/*
+/docker
 .env
+.env.local
+.env.development
