@@ -1,7 +1,7 @@
 <section id="promo-banner" class="promo-banner-section">
 
     {{-- === 1 === --}}
-    <a class="promo-banner-slide active" href="{{ route('promo.full-websites', ['locale' => $locale]) }}">
+    <a class="promo-banner-slide active" href="{{ route('promo.full-websites', ['locale' => $locale ?? app()->getLocale()]) }}">
         <div class="promo-banner-inner">
             <div class="promo-banner-image">
                 <img src="/img/promo/websites.png" alt="">
@@ -15,7 +15,7 @@
     </a>
 
     {{-- === 2 === --}}
-    <a class="promo-banner-slide" href="{{ route('promo.landing-pages', ['locale' => $locale]) }}">
+    <a class="promo-banner-slide" href="{{ route('promo.landing-pages', ['locale' => $locale ?? app()->getLocale()]) }}">
         <div class="promo-banner-inner">
             <div class="promo-banner-image">
                 <img src="/img/promo/small-business-websites.png" alt="">
@@ -29,7 +29,7 @@
     </a>
 
     {{-- === 3 === --}}
-    <a class="promo-banner-slide" href="{{ route('promo.promotions', ['locale' => $locale]) }}">
+    <a class="promo-banner-slide" href="{{ route('promo.promotions', ['locale' => $locale ?? app()->getLocale()]) }}">
         <div class="promo-banner-inner">
             <div class="promo-banner-image">
                 <img src="/img/promo/promotions-special-offers.png" alt="">
@@ -43,7 +43,7 @@
     </a>
 
     {{-- === 4 === --}}
-    <a class="promo-banner-slide" href="{{ route('promo.support', ['locale' => $locale]) }}">
+    <a class="promo-banner-slide" href="{{ route('promo.support', ['locale' => $locale ?? app()->getLocale()]) }}">
         <div class="promo-banner-inner">
             <div class="promo-banner-image">
                 <img src="/img/promo/support.png" alt="">
@@ -57,7 +57,7 @@
     </a>
 
     {{-- === 5 === --}}
-    <a class="promo-banner-slide" href="{{ route('promo.multilingual', ['locale' => $locale]) }}">
+    <a class="promo-banner-slide" href="{{ route('promo.multilingual', ['locale' => $locale ?? app()->getLocale()]) }}">
         <div class="promo-banner-inner">
             <div class="promo-banner-image">
                 <img src="/img/promo/multilingual.png" alt="">
@@ -71,7 +71,7 @@
     </a>
 
     {{-- === 6 === --}}
-    <a class="promo-banner-slide" href="{{ route('promo.menu-price', ['locale' => $locale]) }}">
+    <a class="promo-banner-slide" href="{{ route('promo.menu-price', ['locale' => $locale ?? app()->getLocale()]) }}">
         <div class="promo-banner-inner">
             <div class="promo-banner-image">
                 <img src="/img/promo/menu-price-list.png" alt="">
@@ -85,7 +85,7 @@
     </a>
 
     {{-- === 7 === --}}
-    <a class="promo-banner-slide" href="{{ route('promo.ecommerce', ['locale' => $locale]) }}">
+    <a class="promo-banner-slide" href="{{ route('promo.ecommerce', ['locale' => $locale ?? app()->getLocale()]) }}">
         <div class="promo-banner-inner">
             <div class="promo-banner-image">
                 <img src="/img/promo/e-commerce-cms.png" alt="">

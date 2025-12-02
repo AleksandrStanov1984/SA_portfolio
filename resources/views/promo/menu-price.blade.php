@@ -33,8 +33,6 @@
 
 @section('content')
 
-@section('content')
-
 {{-- BACK BUTTON --}}
 <a href="{{ route('portfolio', ['locale' => $locale]) }}" class="btn btn-primary">
     ← {{ __('portfolio.back') }}
@@ -402,10 +400,30 @@
     }
 }
 
+/* PREMIUM */
+.premium-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 520px;
+    aspect-ratio: 3 / 2;
+    border-radius: 22px;
+    overflow: hidden;
+    box-shadow: 0 18px 45px rgba(0,0,0,0.45);
+}
 
+.premium-slide {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    opacity: 0;
+    transition: opacity .6s ease;
+}
 
-
-
+.premium-slide.active {
+    opacity: 1;
+}
 
 </style>
 
@@ -440,6 +458,33 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 </script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const slides = document.querySelectorAll(".premium-slide");
+    const title  = document.getElementById("premium-title");
+    const desc   = document.getElementById("premium-desc");
+
+    let index = 0;
+
+    function showSlide(i) {
+        slides.forEach(s => s.classList.remove("active"));
+        slides[i].classList.add("active");
+
+        title.textContent = slides[i].dataset.title;
+        desc.textContent = slides[i].dataset.desc;
+    }
+
+    setInterval(() => {
+        index = (index + 1) % slides.length;
+        showSlide(index);
+    }, 4000); // 8 секунд
+
+    showSlide(0);
+});
+</script>
+
+
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
@@ -489,20 +534,34 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 </script>
 
-
-
+{{--   PREMIUM BLOCK (FINAL)  --}}
 {{-- ======================== --}}
-{{--   PREMIUM BLOCK          --}}
-{{-- ======================== --}}
-<section id="premium" class="pack-section">
+<section id="premium" class="pack-section" style="grid-template-columns:1fr 1fr;">
+
+    {{-- ЛЕВАЯ ЧАСТЬ — текст меняется --}}
     <div class="pack-text fade-left">
-        <h2>{{ __('menu.premium_title') }}</h2>
-        <p>{{ __('menu.premium_desc') }}</p>
-        <a class="btn " href="#contact">{{ __('menu.order_premium') }}</a>
+        <h2 id="premium-title">{{ __('menu.premium_title') }}</h2>
+        <p id="premium-desc">{{ __('menu.premium_desc') }}</p>
+        <a class="btn" href="#contact">{{ __('menu.order_premium') }}</a>
     </div>
 
-    <div class="pack-img fade-right">
-        <img src="/img/menu/premium/premium_main.jpg" alt="Premium Pack">
+    {{-- ПРАВАЯ ЧАСТЬ — автослайдер --}}
+    <div class="premium-wrapper fade-right">
+
+        {{-- СЛАЙД 1 --}}
+        <img src="/img/menu/premium/premium_main.jpg"
+             class="premium-slide active"
+             data-title="{{ __('menu.premium_title') }}"
+             data-desc="{{ __('menu.premium_desc') }}"
+             alt="Premium">
+
+        {{-- СЛАЙД 2 --}}
+        <img src="/img/menu/premium/premium_admin.jpg"
+             class="premium-slide"
+             data-title="{{ __('menu.premium_title_admin') }}"
+             data-desc="{{ __('menu.premium_desc_admin') }}"
+             alt="Admin">
+
     </div>
 </section>
 

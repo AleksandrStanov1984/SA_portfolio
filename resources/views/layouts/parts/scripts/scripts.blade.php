@@ -92,7 +92,7 @@ window.showTopAlert = function(message, type = 'success') {
 
     setTimeout(() => {
         bar.style.top = "-70px";
-    }, 5000);
+    }, 8000);
 }
 </script>
 
@@ -126,8 +126,9 @@ window.showAlert = function (text, type = "success") {
     setTimeout(() => {
         // уезжаем обратно (2 сек по transition)
         bar.style.left = "-100%";
-    }, 5000);
+    }, 8000);
 };
+</script>
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {

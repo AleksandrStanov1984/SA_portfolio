@@ -160,6 +160,9 @@ return [
             'analytics_desc_4' => 'High-quality dish photos significantly increase sales and engagement.',
             'analytics_desc_5' => 'Digital menus improve trust and increase customer conversion.',
 
+            'premium_title_admin' => 'Premium Admin Panel',
+            'premium_desc_admin'  => 'Advanced management panel: products, menu, categories, media files, promotions and analytics — all in one place.',
+
 
 
 ];

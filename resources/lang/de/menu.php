@@ -160,6 +160,9 @@ return [
             'analytics_desc_4' => 'Hochwertige Fotos erhöhen Verkäufe und verbessern das Kundenvertrauen.',
             'analytics_desc_5' => 'Digitale Menüs steigern das Interesse und die Konversion von Kunden.',
 
+            'premium_title_admin' => 'Premium-Adminbereich',
+            'premium_desc_admin'  => 'Erweiterter Verwaltungsbereich: Produkte, Menü, Kategorien, Mediendateien, Aktionen und Analytik — alles an einem Ort.',
+
 
 
 ];

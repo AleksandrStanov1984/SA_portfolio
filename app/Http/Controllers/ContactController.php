@@ -12,11 +12,14 @@ class ContactController extends Controller
 {
     public function send(string $locale, ContactRequest $request)
     {
+        // Устанавливаем язык
         app()->setLocale($locale);
 
+        // Данные
         $data = $request->validated();
-        $data['locale'] = $locale; // ← добавляем язык в payload
+        $data['locale'] = $locale;
 
+        // Сохраняем в базу
         ContactMessage::create([
             'name'    => $data['name'],
             'email'   => $data['email'],
@@ -27,19 +30,26 @@ class ContactController extends Controller
             'locale'  => $locale,
         ]);
 
-        try {
-            // письмо тебе
-            Mail::to(env('MAIL_TO'))
-                ->send(new ContactMessageMail($data));  // ← удалили $locale (оно уже в $data)
+        // Кому отправляем
+        $adminEmail = env('MAIL_TO');    // ты
+        $clientEmail = $data['email'];   // клиент
 
-            // автоответ — получит язык из $data['locale']
-            Mail::to($data['email'])
-                ->send(new ContactAutoReplyMail($data));
+        try {
+
+            // --- Письмо тебе ---
+            Mail::to($adminEmail)->queue(new ContactMessageMail($data));
+
+            // --- Автоответ клиенту ---
+            Mail::to($clientEmail)->queue(new ContactAutoReplyMail($data));
 
             return response()->json(['ok' => true]);
 
         } catch (\Throwable $e) {
-            return response()->json(['ok' => false], 500);
+
+            return response()->json([
+                'ok' => false,
+                'error' => $e->getMessage()
+            ], 500);
         }
     }
 }

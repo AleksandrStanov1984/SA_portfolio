@@ -97,18 +97,47 @@ Route::get('/{locale}/reviews/paginated', function ($locale) {
 
 
 // ===============================
-//  ⭐️ PROMO PAGES (новые)
+//  ⭐️ PROMO PAGES
 // ===============================
 Route::group([
     'prefix' => '{locale}/services',
     'where'  => ['locale' => 'de|en|ru']
 ], function () {
 
-    Route::view('/menu-price', 'promo.menu-price')->name('promo.menu-price');
-    Route::view('/full-websites', 'promo.full-websites')->name('promo.full-websites');
-    Route::view('/landing-pages', 'promo.landing-pages')->name('promo.landing-pages');
-    Route::view('/promotions', 'promo.promotions')->name('promo.promotions');
-    Route::view('/support', 'promo.support')->name('promo.support');
-    Route::view('/multilingual', 'promo.multilingual')->name('promo.multilingual');
-    Route::view('/ecommerce', 'promo.ecommerce')->name('promo.ecommerce');
+    Route::get('/menu-price', function($locale) {
+        app()->setLocale($locale);
+        return view('promo.menu-price', ['locale' => $locale]);
+    })->name('promo.menu-price');
+
+    Route::get('/full-websites', function($locale) {
+        app()->setLocale($locale);
+        return view('promo.full-websites', ['locale' => $locale]);
+    })->name('promo.full-websites');
+
+    Route::get('/landing-pages', function($locale) {
+        app()->setLocale($locale);
+        return view('promo.landing-pages', ['locale' => $locale]);
+    })->name('promo.landing-pages');
+
+    Route::get('/promotions', function($locale) {
+        app()->setLocale($locale);
+        return view('promo.promotions', ['locale' => $locale]);
+    })->name('promo.promotions');
+
+    Route::get('/support', function($locale) {
+        app()->setLocale($locale);
+        return view('promo.support', ['locale' => $locale]);
+    })->name('promo.support');
+
+    Route::get('/multilingual', function($locale) {
+        app()->setLocale($locale);
+        return view('promo.multilingual', ['locale' => $locale]);
+    })->name('promo.multilingual');
+
+    Route::get('/ecommerce', function($locale) {
+        app()->setLocale($locale);
+        return view('promo.ecommerce', ['locale' => $locale]);
+    })->name('promo.ecommerce');
+
 });
+
