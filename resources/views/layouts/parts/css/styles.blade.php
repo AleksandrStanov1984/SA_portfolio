@@ -1,3 +1,9 @@
+
+<!-- Promo Slider Styles -->
+    <link rel="stylesheet" href="{{ asset('css/promo-slider.css') }}">
+
+
+
 <style>
         :root {
             --bg: #050816;
@@ -793,6 +799,27 @@ right: -10px;
 .lang-switch:hover a.active:not(:hover) {
     border-color: transparent !important;
 }
+
+.main-nav {
+    display: flex;
+    gap: 22px;
+    align-items: center;
+}
+
+.nav-link {
+    padding: 6px 14px;
+    border-radius: 999px;
+    transition: .25s;
+}
+
+.nav-link.active {
+    border: 1px solid #fff;
+}
+
+.nav-link:hover {
+    border: 1px solid #4f46e5;
+}
+
 
 
 

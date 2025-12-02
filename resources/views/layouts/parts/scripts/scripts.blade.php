@@ -1,3 +1,8 @@
+
+<link rel="stylesheet" href="/scripts/promo-slider.js">
+
+
+
 <script>
     document.getElementById('year').textContent = new Date().getFullYear();
 </script>
@@ -123,5 +128,40 @@ window.showAlert = function (text, type = "success") {
         bar.style.left = "-100%";
     }, 5000);
 };
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+
+    const sections = {
+        about: document.getElementById("about"),
+        skills: document.getElementById("skills"),
+        projects: document.getElementById("projects"),
+        experience: document.getElementById("experience"),
+        contact: document.getElementById("contact"),
+    };
+
+    const links = document.querySelectorAll(".nav-link");
+
+    function setActive(id) {
+        links.forEach(a => a.classList.remove("active"));
+        const activeLink = document.querySelector(`.nav-link[href="#${id}"]`);
+        if (activeLink) activeLink.classList.add("active");
+    }
+
+    window.addEventListener("scroll", () => {
+        let scrollPos = window.scrollY + 200;
+
+        for (let id in sections) {
+            const sec = sections[id];
+            if (!sec) continue;
+
+            if (scrollPos >= sec.offsetTop && scrollPos < sec.offsetTop + sec.offsetHeight) {
+                setActive(id);
+            }
+        }
+    });
+});
+
 </script>
+
 

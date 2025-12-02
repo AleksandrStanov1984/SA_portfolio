@@ -465,6 +465,9 @@ eingesetzter Lösungen für Stabilität im Alltag.</li>
 'counter' => ':current / :max',
 'contact_topic_other' => 'Andere',
 
+'more' => 'Mehr erfahren →',
+'nachricht_senden' => 'Nachricht senden',
+
 
 
 

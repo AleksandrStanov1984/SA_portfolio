@@ -306,7 +306,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             if (firstBackend) scrollToField(firstBackend);
 
-            showAlert("@lang('portfolio.alert_error')", "error");
+            showAlert(msgError, "error");
             return;
         }
 
@@ -324,5 +324,39 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
+    window.showAlert = function (text, type = "success") {
+        const bar = document.getElementById('alertBar');
+        if (!bar) return;
+
+        bar.textContent = text;
+
+        // Мягкие цвета под тёмный фон
+        if (type === "success") {
+            // мягкий зелёный / бирюзовый
+            bar.style.background = "linear-gradient(90deg, #059669, #22c55e)";
+            bar.style.color = "#ecfdf5"; // чуть теплее, чем чисто белый
+        } else {
+            // приглушённый тёплый красный
+            bar.style.background = "linear-gradient(90deg, #b91c1c, #f97373)";
+            bar.style.color = "#fef2f2";
+        }
+
+        // старт слева
+        bar.style.left = "-100%";
+
+        // выезд слева направо (2 сек)
+        setTimeout(() => {
+            bar.style.left = "0";
+        }, 10);
+
+        // 2 сек анимации + 3 сек пауза = 5 сек
+        setTimeout(() => {
+            // уезжаем обратно (2 сек по transition)
+            bar.style.left = "-100%";
+        }, 5000);
+    };
+
 });
 </script>
+
+

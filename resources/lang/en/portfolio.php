@@ -440,6 +440,8 @@ to ensure stability and reliability.</li>
 'counter' => ':current / :max',
 'contact_topic_other' => 'Other',
 
+'more' => 'Learn more →',
+'nachricht_senden' => 'Send Message',
 
 
 

@@ -29,6 +29,26 @@
 
 <div class="page">
 
+    @php
+        /**
+         * Переключатель языка.
+         * - сохраняет имя роута
+         * - сохраняет все route parameters
+         * - удаляет GET-параметры (?view=...)
+         * - заменяет только {locale}
+         */
+        $switchLang = function($lang) {
+            $route = \Illuminate\Support\Facades\Route::currentRouteName();
+            $params = request()->route()->parameters();
+
+            // Перезаписываем locale
+            $params['locale'] = $lang;
+
+            return route($route, $params);
+        };
+    @endphp
+
+
     @include('layouts.parts.header')
 
     @yield('content')

@@ -6,84 +6,109 @@ use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\ContactController;
 use Barryvdh\DomPDF\Facade\Pdf;
 
-// Язык по умолчанию
+
+// ===============================
+//  ЯЗЫК ПО УМОЛЧАНИЮ → DE
+// ===============================
 Route::redirect('/', '/de');
 
-// Страница портфолио
+
+// ===============================
+//  ГЛАВНАЯ СТРАНИЦА PORTFOLIO
+// ===============================
 Route::get('/{locale}', [PortfolioController::class, 'index'])
     ->name('portfolio')
     ->whereIn('locale', ['de', 'en', 'ru']);
 
-// Сохранение отзывов
+
+// ===============================
+//  REVIEWS
+// ===============================
 Route::post('/{locale}/reviews/store', [ReviewController::class, 'store'])
     ->name('reviews.store')
     ->whereIn('locale', ['de', 'en', 'ru']);
 
-// Ajax нажатия звёзд
 Route::post('/{locale}/portfolio/rating-click', [PortfolioController::class, 'rateClick'])
     ->name('portfolio.review.rate')
     ->whereIn('locale', ['de', 'en', 'ru']);
 
-// Portfolio PDF
+
+// ===============================
+//  PORTFOLIO PDF
+// ===============================
 Route::get('/{locale}/portfolio.pdf', [PortfolioController::class, 'downloadPdf'])
     ->name('portfolio.pdf')
     ->whereIn('locale', ['de', 'en', 'ru']);
 
-// Legal pages
-Route::get('/{locale}/impressum', function (string $locale) {
+
+// ===============================
+//  LEGAL PAGES (HTML)
+// ===============================
+Route::get('/{locale}/impressum', function ($locale) {
     app()->setLocale($locale);
     return view('legal.impressum', ['locale' => $locale]);
 })->name('impressum')->whereIn('locale', ['de', 'en', 'ru']);
 
-Route::get('/{locale}/datenschutz', function (string $locale) {
+Route::get('/{locale}/datenschutz', function ($locale) {
     app()->setLocale($locale);
     return view('legal.datenschutz', ['locale' => $locale]);
 })->name('datenschutz')->whereIn('locale', ['de', 'en', 'ru']);
 
 
-// ================================
-// PDF — ОФИЦИАЛЬНЫЕ ИСПРАВЛЕННЫЕ
-// ================================
-
-// IMPRESSUM PDF
-Route::get('/{locale}/impressum.pdf', function (string $locale) {
+// ===============================
+//  LEGAL PDF
+// ===============================
+Route::get('/{locale}/impressum.pdf', function ($locale) {
     app()->setLocale($locale);
-
-    $pdf = Pdf::loadView('pdf.impressum', [
-        'locale' => $locale,
-    ]);
-
+    $pdf = Pdf::loadView('pdf.impressum', ['locale' => $locale]);
     return $pdf->download("impressum-{$locale}.pdf");
 })->name('impressum.pdf')->whereIn('locale', ['de', 'en', 'ru']);
 
-
-// DATENSCHUTZ PDF
-Route::get('/{locale}/datenschutz.pdf', function (string $locale) {
+Route::get('/{locale}/datenschutz.pdf', function ($locale) {
     app()->setLocale($locale);
-
-    $pdf = Pdf::loadView('pdf.datenschutz', [
-        'locale' => $locale,
-    ]);
-
+    $pdf = Pdf::loadView('pdf.datenschutz', ['locale' => $locale]);
     return $pdf->download("datenschutz-{$locale}.pdf");
 })->name('datenschutz.pdf')->whereIn('locale', ['de', 'en', 'ru']);
 
 
-// Контактная форма
+// ===============================
+//  CONTACT FORM
+// ===============================
 Route::post('/{locale}/contact/send', [ContactController::class, 'send'])
     ->name('contact.send')
     ->whereIn('locale', ['de', 'en', 'ru']);
 
-    Route::get('/{locale}/reviews/paginated', function (string $locale) {
-        app()->setLocale($locale);
 
-        $reviews = \App\Models\Review::where('approved', true)
-            ->latest()
-            ->paginate(5);
+// ===============================
+//  PAGINATED REVIEWS
+// ===============================
+Route::get('/{locale}/reviews/paginated', function ($locale) {
+    app()->setLocale($locale);
 
-        return view('portfolio.sections.reviews-paginated', [
-            'reviews' => $reviews
-        ]);
-    })->name('reviews.paginated');
+    $reviews = \App\Models\Review::where('approved', true)
+        ->latest()
+        ->paginate(5);
+
+    return view('portfolio.sections.reviews-paginated', [
+        'reviews' => $reviews,
+        'locale'  => $locale
+    ]);
+})->name('reviews.paginated')->whereIn('locale', ['de', 'en', 'ru']);
 
 
+// ===============================
+//  ⭐️ PROMO PAGES (новые)
+// ===============================
+Route::group([
+    'prefix' => '{locale}/services',
+    'where'  => ['locale' => 'de|en|ru']
+], function () {
+
+    Route::view('/menu-price', 'promo.menu-price')->name('promo.menu-price');
+    Route::view('/full-websites', 'promo.full-websites')->name('promo.full-websites');
+    Route::view('/landing-pages', 'promo.landing-pages')->name('promo.landing-pages');
+    Route::view('/promotions', 'promo.promotions')->name('promo.promotions');
+    Route::view('/support', 'promo.support')->name('promo.support');
+    Route::view('/multilingual', 'promo.multilingual')->name('promo.multilingual');
+    Route::view('/ecommerce', 'promo.ecommerce')->name('promo.ecommerce');
+});
