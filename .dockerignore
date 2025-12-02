@@ -1,7 +1,12 @@
-vendor
+.git
+.gitignore
 node_modules
+vendor
 storage/logs
 storage/framework/sessions
 storage/framework/views
+storage/framework/cache
 npm-debug.log
 .env
+.env.*
+docker-compose.yml
