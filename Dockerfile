@@ -29,7 +29,7 @@ RUN a2enmod rewrite
 # Конфигурация виртуального хоста
 COPY docker/vhost.conf /etc/apache2/sites-available/000-default.conf
 
-# Устанавливаем Composer
+# Composer
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
 WORKDIR /var/www/html
@@ -37,13 +37,18 @@ WORKDIR /var/www/html
 # Копируем приложение
 COPY . .
 
-# Чистая установка зависимостей
+# Установка зависимостей
 RUN composer install --no-dev --optimize-autoloader
 
-# Линки
+# Кэш Laravel
+RUN php artisan config:clear \
+ && php artisan config:cache \
+ && php artisan route:cache \
+ && php artisan view:cache || true
+
+# Storage link
 RUN php artisan storage:link || true
 
 # Права
-RUN chown -R www-data:www-data /var/www/html && \
-    chmod -R 775 storage bootstrap/cache
-
+RUN chown -R www-data:www-data /var/www/html \
+    && chmod -R 775 storage bootstrap/cache
