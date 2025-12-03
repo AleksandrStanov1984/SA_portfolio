@@ -7,6 +7,15 @@ use App\Http\Controllers\ContactController;
 use Barryvdh\DomPDF\Facade\Pdf;
 
 
+Route::get('/debug', function () {
+    try {
+        \DB::connection()->getPdo();
+        return 'DB OK';
+    } catch (\Throwable $e) {
+        return '<pre>' . $e . '</pre>';
+    }
+});
+
 Route::get('/healthz', function () {
     return response('OK', 200);
 })->withoutMiddleware([
