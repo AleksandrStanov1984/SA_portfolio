@@ -3,6 +3,10 @@
 /node_modules
 /public/storage
 /storage/*.key
+/storage/framework/cache/*
+/storage/framework/views/*
+/storage/framework/sessions/*
+
 .env
 .env.backup
 .env.local
@@ -11,6 +15,10 @@
 
 # SQLite local DB
 /database/*.sqlite
+
+# Docker (recommended)
+docker-compose.yml
+docker-compose.yaml
 
 # Puppeteer browser binaries / cache
 /.local-chromium

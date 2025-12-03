@@ -1,6 +1,6 @@
 FROM php:8.2-apache
 
-# Устанавливаем системные пакеты
+# Системные зависимости
 RUN apt-get update && apt-get install -y \
     git \
     curl \
@@ -13,8 +13,10 @@ RUN apt-get update && apt-get install -y \
     libssl-dev \
     libicu-dev \
     libcurl4-openssl-dev \
-    pkg-config \
-    && docker-php-ext-install \
+    pkg-config
+
+# PHP extensions
+RUN docker-php-ext-install \
         pdo \
         pdo_pgsql \
         mbstring \
@@ -24,7 +26,7 @@ RUN apt-get update && apt-get install -y \
 # Включаем mod_rewrite
 RUN a2enmod rewrite
 
-# Настраиваем виртуальный хост
+# Конфигурация виртуального хоста
 COPY docker/vhost.conf /etc/apache2/sites-available/000-default.conf
 
 # Устанавливаем Composer
@@ -32,20 +34,16 @@ COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
 WORKDIR /var/www/html
 
-# Копируем файлы приложения
+# Копируем приложение
 COPY . .
 
-# Удаляем старые и собираем новые зависимости
+# Чистая установка зависимостей
 RUN composer install --no-dev --optimize-autoloader
 
-RUN php artisan storage:link
+# Линки
+RUN php artisan storage:link || true
 
-# Настраиваем права
-RUN chown -R www-data:www-data /var/www/html \
-    && chmod -R 775 storage bootstrap/cache
-
-RUN chmod -R 775 storage bootstrap/cache
-
-RUN php artisan migrate --force
-
+# Права
+RUN chown -R www-data:www-data /var/www/html && \
+    chmod -R 775 storage bootstrap/cache
 

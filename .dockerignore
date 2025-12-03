@@ -1,9 +1,44 @@
+# Git
 .git
-/vendor
-/node_modules
-/storage/logs/*
-/storage/framework/cache/*
-/storage/framework/views/*
+.gitignore
+
+# Composer vendor (будет устанавливаться внутри контейнера)
+vendor/
+
+# Node modules
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Laravel storage исключения
+storage/logs/*
+storage/framework/cache/*
+storage/framework/views/*
+
+# Don't copy environment files
 .env
-.env.local
-.env.development
+.env.*
+!.env.example
+!.env.production    # <-- Оставляем, если хочешь копировать его внутрь контейнера
+
+# SQLite local DB — обязательно!
+database/*.sqlite
+*.sqlite
+*.sqlite3
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# PHPStorm / VSCode
+.idea/
+.vscode/
+
+# Puppeteer / Chromium caches
+.local-chromium
+.puppeteer
+.cache/puppeteer
+puppeteer_dev_profile-*/
+
+# Docker build cache
+docker-compose.yml
