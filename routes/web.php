@@ -8,8 +8,22 @@ use Barryvdh\DomPDF\Facade\Pdf;
 
 
 Route::get('/healthz', function () {
-    return response()->json(['status' => 'ok'], 200);
-});
+    return response('OK', 200);
+})->withoutMiddleware([
+    'web',
+    'auth',
+    'auth.basic',
+    'auth.session',
+    'cache.headers',
+    'can',
+    'guest',
+    'password.confirm',
+    'signed',
+    'throttle',
+    'verified',
+]);
+
+
 
 // ===============================
 //  ЯЗЫК ПО УМОЛЧАНИЮ → DE
