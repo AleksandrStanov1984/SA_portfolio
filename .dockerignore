@@ -1,46 +1,24 @@
-# Node files
+# --- Игнорируем мусор и временные файлы ---
+.git
+.github
+.idea
 node_modules
 npm-debug.log
 yarn-error.log
 
-# Build artifacts
-/public/build
-/public/hot
-/public/storage
+# --- Laravel кэш / временные ---
+storage/*.key
+storage/framework/sessions/*
+storage/framework/views/*
+storage/framework/cache/data/*
+storage/logs/*
 
-# Laravel cache & local stuff
-/storage/logs/*
-/storage/framework/cache/*
-/storage/framework/views/*
-/storage/framework/sessions/*
-/storage/framework/testing/*
-
-# Environment
-.env
-.env.backup
-.env.local
-
-# VCS
-.git
-.gitignore
-
-# OS / IDE files
-.DS_Store
-*.swp
-.idea
-.vscode
-Thumbs.db
-
-# Composer stuff not needed in container
-vendor/bin
-vendor/laravel/sail
-
-# Docker stuff
-docker/local/*
+# --- Системные ---
 docker-compose.yml
-docker-compose.local.yml
+Dockerfile.dev
 
-# Coverage / tests
-phpunit.xml
-tests
-coverage
+# --- НЕ УДАЛЯТЬ ---
+!.env
+!artisan
+!composer.json
+!composer.lock
