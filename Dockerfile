@@ -10,10 +10,10 @@ RUN apt-get update && apt-get install -y \
     libxml2-dev \
     && docker-php-ext-install pdo pdo_pgsql mbstring zip
 
-# Включаем mod_rewrite
+# Включаем модуль Apache
 RUN a2enmod rewrite
 
-# Настройка Apache VirtualHost
+# Конфиг Apache
 COPY docker/vhost.conf /etc/apache2/sites-available/000-default.conf
 
 # Установка Composer
@@ -27,22 +27,17 @@ COPY . .
 # Установка зависимостей Laravel
 RUN composer install --no-dev --optimize-autoloader
 
-# Laravel optimize
-RUN php artisan config:clear
-RUN php artisan cache:clear
-RUN php artisan route:clear
-RUN php artisan view:clear
-
-RUN php artisan config:cache || true
-RUN php artisan route:cache || true
-RUN php artisan view:cache || true
-
-# Storage link
+# Создаём storage link заранее
 RUN php artisan storage:link || true
 
-# Права на storage и bootstrap/cache
-RUN chown -R www-data:www-data storage bootstrap/cache && \
-    chmod -R 775 storage bootstrap/cache
+# Права на storage & cache — ДОЛЖНЫ выполняться до optimize
+RUN chown -R www-data:www-data storage bootstrap/cache \
+    && chmod -R 775 storage bootstrap/cache
+
+# Laravel optimize (без clear!)
+RUN php artisan config:cache || true \
+    && php artisan route:cache || true \
+    && php artisan view:cache || true
 
 EXPOSE 80
 
