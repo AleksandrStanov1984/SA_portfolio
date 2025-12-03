@@ -1,44 +1,63 @@
+# ============================================================
+# 1) BASE IMAGE (php + apache)
+# ============================================================
 FROM php:8.2-apache
 
-# Системные пакеты
+# Ускоряем apt
 RUN apt-get update && apt-get install -y \
     git \
     unzip \
     libpq-dev \
     libzip-dev \
-    libonig-dev \
-    libxml2-dev \
-    && docker-php-ext-install pdo pdo_pgsql mbstring zip
+    && docker-php-ext-install pdo pdo_pgsql zip
 
-# Включаем модуль Apache
+# Apache rewrite
 RUN a2enmod rewrite
 
-# Конфиг Apache
-COPY docker/vhost.conf /etc/apache2/sites-available/000-default.conf
-
-# Установка Composer
+# ============================================================
+# 2) COMPOSER
+# ============================================================
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
+# ============================================================
+# 3) WORKDIR
+# ============================================================
 WORKDIR /var/www/html
 
-# Копируем проект
+# ============================================================
+# 4) COPY only composer first (Docker cache)
+# ============================================================
+COPY composer.json composer.lock ./
+
+# ============================================================
+# 5) Install vendor dependencies (cached layer!)
+# ============================================================
+RUN composer install --no-dev --optimize-autoloader --no-interaction
+
+# ============================================================
+# 6) Now copy full application
+# ============================================================
 COPY . .
 
-# Установка зависимостей Laravel
-RUN composer install --no-dev --optimize-autoloader
+# ============================================================
+# 7) Laravel optimization (BUILD-TIME!)
+# ============================================================
+RUN php artisan storage:link --quiet || true \
+    && php artisan config:cache --quiet \
+    && php artisan route:cache --quiet \
+    && php artisan view:cache --quiet
 
-# Создаём storage link заранее
-RUN php artisan storage:link || true
+# ============================================================
+# 8) Rights (Apache user)
+# ============================================================
+RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
 
-# Права на storage & cache — ДОЛЖНЫ выполняться до optimize
-RUN chown -R www-data:www-data storage bootstrap/cache \
-    && chmod -R 775 storage bootstrap/cache
-
-# Laravel optimize (без clear!)
-RUN php artisan config:cache || true \
-    && php artisan route:cache || true \
-    && php artisan view:cache || true
-
+# ============================================================
+# 9) Expose port
+# ============================================================
 EXPOSE 80
 
+# ============================================================
+# 10) Start Apache
+# ============================================================
 CMD ["apache2-foreground"]
