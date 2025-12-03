@@ -7,6 +7,10 @@ use App\Http\Controllers\ContactController;
 use Barryvdh\DomPDF\Facade\Pdf;
 
 
+Route::get('/healthz', function () {
+    return response()->json(['status' => 'ok'], 200);
+});
+
 // ===============================
 //  ЯЗЫК ПО УМОЛЧАНИЮ → DE
 // ===============================
