@@ -841,4 +841,260 @@ right: -10px;
 
 
 
+
+
+/* ============================================================
+   EXTRA RESPONSIVE TWEAKS (mobile & tablet)
+   ============================================================ */
+@media (max-width: 768px) {
+    .page {
+        padding: 20px 14px 40px;
+    }
+
+    /* Одноколоночная сетка проектов на узких экранах */
+    .card-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    /* Заголовки и подзаголовки чуть меньше, чтобы влезал текст */
+    .section-title {
+        font-size: 1.08rem;
+    }
+
+    .section-subtitle {
+        font-size: 0.86rem;
+    }
+
+    /* Слайдер навыков — каждая карточка на всю ширину */
+    .skills-mask {
+        padding: 18px 0;
+    }
+
+    .skill-card {
+        min-width: 100%;
+    }
+
+    .skills-arrow.left {
+        left: 4px;
+    }
+
+    .skills-arrow.right {
+        right: 4px;
+    }
+}
+
+@media (max-width: 600px) {
+    /* Модальные окна контактов и отзывов — адаптация под мобильные */
+    #contactModalBox,
+    #reviewModalBox {
+        width: calc(100% - 32px) !important;
+        max-height: calc(100vh - 40px);
+        overflow-y: auto;
+        padding: 20px !important;
+    }
+
+    /* Чуть компактнее карточки проектов */
+    .project-card {
+        padding: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Хедер — компактнее логотип и отступы */
+    .site-header .header-inner {
+        padding-inline: 14px;
+    }
+
+    .logo {
+        font-size: 0.84rem;
+    }
+}
+
+/* ============================= */
+/*   MOBILE HEADER FIXED WIDTH   */
+/* ============================= */
+
+ /* Адаптация для телефонов */
+ @media(max-width:768px){
+
+     #siteHeader {
+         border-radius: 26px;
+         padding: 10px 0;
+         background: rgba(8, 15, 29, 0.95);
+         backdrop-filter: blur(12px);
+     }
+
+     .header-inner {
+         width:100%;
+         max-width:360px;
+         display:grid;
+         grid-template-columns: 32px 1fr auto;
+         align-items:center;
+         gap:10px;
+         position:relative;
+     }
+
+     /* Бургер-кнопка */
+     .burger {
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         align-items: center;
+         gap: 4px;
+         width: 28px;
+         height: 24px;
+         background: none;
+         border: none;
+         padding: 0;
+         cursor: pointer;
+     }
+
+     /* Сами полоски */
+     .burger span {
+         display: block;
+         width: 22px;
+         height: 2px;
+         background: #ffffff;
+         border-radius: 2px;
+     }
+
+     .logo {
+         text-align:center;
+         font-size:0.85rem;
+         white-space:nowrap;
+     }
+
+     .locale-switch {
+         display:flex;
+         flex-direction:column;
+         gap:2px;
+         text-align:right;
+         font-size:0.75rem;
+     }
+
+     .nav-list {
+         position:absolute;
+         top:calc(100% + 10px);
+         right:0;
+         width:150px;
+         padding:16px 18px;
+
+         display:none;
+         flex-direction:column;
+         gap:14px;
+
+         border-radius:20px;
+         border:1px solid #1f2937;
+         background:rgba(8,15,29,0.96);
+         backdrop-filter:blur(12px);
+         z-index:9999;
+     }
+
+     .nav-list.show {
+         display:flex;
+     }
+ }
+
+ /* DESKTOP — всегда flex */
+ @media (min-width: 769px) {
+
+     #siteHeader {
+         position: fixed;
+         top: 0;
+         left: 0;
+         width: 100%;
+         z-index: 9999;
+         transition: opacity 0.25s ease, transform 0.2s ease;
+     }
+
+     .header-inner {
+         display: flex !important;
+         align-items: center;
+         justify-content: space-between;
+
+         max-width: 1150px;
+         width: 100%;
+         padding: 18px 32px;
+
+         /* ВАЖНО: Reset grid from mobile */
+         grid-template-columns: unset !important;
+         gap: unset !important;
+     }
+ }
+
+
+@media (min-width: 769px) {
+    .card {
+        display: grid;
+        grid-template-columns: minmax(0,3fr) minmax(0,2fr);
+        gap: 18px;
+    }
+}
+
+/* Мини панель со стрелкой — iOS стиль */
+.mini-header {
+    position: fixed;
+    top: 12px;                 /* чуть ниже края */
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: auto;
+    padding: 8px 18px;
+
+    background: rgba(255, 255, 255, 0.08); /* светлее текущего фона */
+    backdrop-filter: blur(14px);
+
+    border-radius: 20px;       /* капсула */
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+    z-index: 99999;
+}
+
+/* Показываем панель */
+.mini-header.show {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(-50%) translateY(0);
+}
+
+.mini-arrow {
+    font-size: 22px;
+    color: #ffffff;
+    cursor: pointer;
+    user-select: none;
+    transition: transform 0.2s ease;
+}
+
+.mini-arrow:hover {
+    transform: translateY(2px);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </style>

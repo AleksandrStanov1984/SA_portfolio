@@ -2,7 +2,7 @@
     <h2 class="section-title">@lang('portfolio.contact_title')</h2>
 
     <div class="card"
-         style="display:grid;
+         style="
                 grid-template-columns:minmax(0,3fr) minmax(0,2fr);
                 gap:18px;">
 

@@ -179,3 +179,69 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 </script>
 
+<script>
+let lastScroll = 0;
+const header = document.getElementById('siteHeader');
+const menuToggle = document.getElementById('menuToggle');
+const mainNav = document.getElementById('mainNav');
+
+menuToggle.addEventListener('click', () => {
+    mainNav.classList.toggle('show');
+});
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const header = document.getElementById("siteHeader");
+    const miniHeader = document.getElementById("miniHeader");
+    const arrow = document.querySelector(".mini-arrow");
+
+    if (!header || !miniHeader || !arrow) return;
+
+    let lastScroll = 0;
+
+    window.addEventListener("scroll", () => {
+        const current = window.scrollY;
+
+        // Только мобильная версия
+        if (window.innerWidth > 768) {
+            header.style.opacity = "1";
+            miniHeader.classList.remove("show");
+            return;
+        }
+
+        // ✦ СКРОЛЛ ВНИЗ — прячем основной хедер, показываем мини-панель
+        if (current > lastScroll + 5) {
+            header.style.opacity = "0";
+            miniHeader.classList.add("show");
+        }
+
+        // ✦ СКРОЛЛ ВВЕРХ — тоже прячем хедер, показываем мини-панель
+        else if (current < lastScroll - 5) {
+            header.style.opacity = "0";
+            miniHeader.classList.add("show");
+        }
+
+        lastScroll = current;
+    });
+
+    // Нажали стрелку → показываем хедер, скрываем мини-хедер
+    arrow.addEventListener("click", () => {
+        header.style.opacity = "1";
+        miniHeader.classList.remove("show");
+    });
+});
+
+
+
+</script>
+
+<script>
+const burgerBtn = document.getElementById("burgerBtn");
+const mobileMenu = document.getElementById("mobileMenu");
+
+burgerBtn.addEventListener("click", () => {
+    mobileMenu.classList.toggle("show");
+});
+</script>
+

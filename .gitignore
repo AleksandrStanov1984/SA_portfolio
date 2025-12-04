@@ -12,6 +12,7 @@
 .env.local
 .env.development
 .env.testing
+.aaaaa.txt
 
 # SQLite local DB
 /database/*.sqlite
