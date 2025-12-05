@@ -425,6 +425,103 @@
     opacity: 1;
 }
 
+/* ============================
+   АДАПТАЦИЯ ПОД МОБИЛЬНЫЕ
+   ДЛЯ PREMIUM и STANDARD
+   ============================ */
+
+/* BREAKPOINT — как BASIC */
+@media (max-width: 1024px) {
+
+    /* 1: ломаем сетку строго в колонку */
+    #premium.pack-section,
+    #standard.pack-section {
+        grid-template-columns: 1fr !important;
+        text-align: center;
+        gap: 32px;
+    }
+
+    /* 2: центрируем текст */
+    #premium .pack-text,
+    #standard .pack-text {
+        max-width: 420px;
+        margin: 0 auto;
+    }
+
+    /* 3: центрируем изображения/слайдеры */
+    #premium .premium-wrapper,
+    #standard .pack-img {
+        max-width: 420px;
+        margin: 0 auto;
+    }
+}
+
+/* Ещё более узкие экраны */
+@media (max-width: 600px) {
+
+    #premium .pack-text h2,
+    #standard .pack-text h2 {
+        font-size: 1.9rem;
+    }
+
+    #premium .pack-text p,
+    #standard .pack-text p {
+        font-size: 1rem;
+    }
+
+    #premium .pack-text .btn,
+    #standard .pack-text .btn {
+        padding: 12px 24px;
+        font-size: 0.95rem;
+    }
+}
+
+/* ==========================================
+   ADAPTIVE FIX — Analytics section
+   ========================================== */
+
+@media (max-width: 1024px) {
+
+    /* 1 — Analytics в колонку как BASIC */
+    #analytics.pack-section {
+        grid-template-columns: 1fr !important;
+        text-align: center;
+        gap: 32px;
+    }
+
+    /* 2 — Центровка текста */
+    #analytics .pack-text {
+        max-width: 420px;
+        margin: 0 auto;
+    }
+
+    /* 3 — График (слайдер) центрируется */
+    #analytics .analytics-wrapper {
+        max-width: 420px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 600px) {
+
+    /* 4 — текстовые размеры уменьшаем */
+    #analytics #analytics-title {
+        font-size: 1.7rem;
+    }
+
+    #analytics #analytics-desc {
+        font-size: 1rem;
+        line-height: 1.45;
+    }
+
+    #analytics .btn {
+        padding: 12px 24px;
+        font-size: 0.95rem;
+    }
+}
+
+
+
 </style>
 
 <script>
@@ -537,7 +634,7 @@ document.addEventListener("DOMContentLoaded", () => {
 {{-- ======================== --}}
 {{--   PREMIUM BLOCK (FINAL)  --}}
 {{-- ======================== --}}
-<section id="premium" class="pack-section" style="grid-template-columns:1fr 1fr;">
+<section id="premium" class="pack-section">
 
     {{-- ЛЕВАЯ ЧАСТЬ — текст меняется --}}
     <div class="pack-text fade-left">
@@ -570,7 +667,7 @@ document.addEventListener("DOMContentLoaded", () => {
 {{-- ======================== --}}
 {{--   STANDARD BLOCK         --}}
 {{-- ======================== --}}
-<section id="standard" class="pack-section" style="grid-template-columns:1fr 1fr;">
+<section id="standard" class="pack-section">
     <div class="pack-img fade-left">
         <img src="/img/menu/standard/standard.jpg" alt="Standard Pack">
     </div>
@@ -607,7 +704,7 @@ document.addEventListener("DOMContentLoaded", () => {
         {{ __('menu.analytics_title') }}
     </h2>
 
-<section id="analytics" class="pack-section" style="grid-template-columns:1fr 1fr;">
+<section id="analytics" class="pack-section">
 
     {{-- Левая часть — график --}}
     <div class="fade-left analytics-wrapper" id="analyticsSlider">
