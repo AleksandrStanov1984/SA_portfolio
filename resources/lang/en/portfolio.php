@@ -443,7 +443,7 @@ to ensure stability and reliability.</li>
 'more' => 'Learn more →',
 'nachricht_senden' => 'Send Message',
 
-
+'mail_admin_subject' => 'New contact message from portfolio',
 
 
 

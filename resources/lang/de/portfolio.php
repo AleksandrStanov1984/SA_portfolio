@@ -468,9 +468,7 @@ eingesetzter Lösungen für Stabilität im Alltag.</li>
 'more' => 'Mehr erfahren →',
 'nachricht_senden' => 'Nachricht senden',
 
-
-
-
+'mail_admin_subject' => 'Neue Kontaktanfrage vom Portfolio',
 
 
 

@@ -4,9 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\ContactRequest;
 use App\Models\ContactMessage;
-use Illuminate\Support\Facades\Mail;
-use App\Mail\ContactMessageMail;
-use App\Mail\ContactAutoReplyMail;
+//use Illuminate\Support\Facades\Mail;
+use App\Services\BrevoMailService;
+//use App\Mail\ContactMessageMail;
+//use App\Mail\ContactAutoReplyMail;
 
 class ContactController extends Controller
 {
@@ -37,10 +38,26 @@ class ContactController extends Controller
         try {
 
             // --- Письмо тебе ---
-            Mail::to($adminEmail)->send(new ContactMessageMail($data));
+            //Mail::to($adminEmail)->send(new ContactMessageMail($data));
+
+            BrevoMailService::send([
+                'to' => $adminEmail,
+                'subject' => __('portfolio.mail_admin_subject'),
+                'html' => view('emails.contact-message', [
+                    'data' => $data
+                ])->render(),
+            ]);
 
             // --- Автоответ клиенту ---
-            //   Mail::to($clientEmail)->send(new ContactAutoReplyMail($data));
+            //Mail::to($clientEmail)->send(new ContactAutoReplyMail($data));
+
+             BrevoMailService::send([
+                    'to' => $data['email'],
+                    'subject' => __('portfolio.mail_autoreply_subject'),
+                    'html' => view('emails.contact-autoreply', [
+                        'data' => $data
+                    ])->render(),
+                ]);
 
             return response()->json(['ok' => true]);
 

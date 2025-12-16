@@ -294,7 +294,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     .getAttribute("content"),
                 "Accept": "application/json"
             },
-            credentials: "same-origin", // 🔴 ВАЖНО
+            credentials: "same-origin", // ВАЖНО
             body: JSON.stringify(payload)
         });
 
