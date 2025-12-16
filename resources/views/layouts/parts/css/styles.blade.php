@@ -1,6 +1,6 @@
 
 <!-- Promo Slider Styles -->
-    <link rel="stylesheet" href="{{ asset('css/promo-slider.css') }}">
+
 
 
 

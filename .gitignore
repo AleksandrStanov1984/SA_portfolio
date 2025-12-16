@@ -15,7 +15,7 @@
 ######################################
 
 /database/*.sqlite
-!/database/database.sqlite
+/database/*.sqlite3
 
 ######################################
 # Storage

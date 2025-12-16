@@ -1,5 +1,5 @@
 
-<link rel="stylesheet" href="/scripts/promo-slider.js">
+
 
 
 
