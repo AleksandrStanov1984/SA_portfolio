@@ -1,24 +1,7 @@
-# --- Игнорируем мусор и временные файлы ---
+/vendor
+/node_modules
 .git
-.github
-.idea
-node_modules
-npm-debug.log
-yarn-error.log
-
-# --- Laravel кэш / временные ---
-storage/*.key
-storage/framework/sessions/*
-storage/framework/views/*
-storage/framework/cache/data/*
+.gitignore
+.env
+.env.*
 storage/logs/*
-
-# --- Системные ---
-docker-compose.yml
-Dockerfile.dev
-
-# --- НЕ УДАЛЯТЬ ---
-!.env
-!artisan
-!composer.json
-!composer.lock

@@ -18,8 +18,8 @@ COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
 WORKDIR /var/www/html
 
-# Copy minimum Laravel files needed for composer scripts
-COPY composer.json composer.lock artisan ./
+# Copy full Laravel project (vendor ignored via .dockerignore)
+COPY . .
 
 # Install dependencies
 RUN composer install \
@@ -28,14 +28,11 @@ RUN composer install \
     --prefer-dist \
     --optimize-autoloader
 
-# Copy the rest of the project
-COPY . .
-
 # Permissions
 RUN chown -R www-data:www-data storage bootstrap/cache \
     && chmod -R 775 storage bootstrap/cache
 
-# Laravel optimizations (safe)
+# Laravel safe commands
 RUN php artisan storage:link || true
 
 EXPOSE 80
