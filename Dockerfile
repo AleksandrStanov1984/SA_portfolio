@@ -1,14 +1,15 @@
 FROM php:8.2-apache
 
-# HARD RESET Apache MPMs (THIS IS THE FIX)
+# === HARD reset Apache MPMs ===
 RUN rm -f /etc/apache2/mods-enabled/mpm_*.load \
     && rm -f /etc/apache2/mods-enabled/mpm_*.conf \
-    && a2enmod mpm_prefork
+    && a2enmod mpm_prefork rewrite
 
-# Enable rewrite
-RUN a2enmod rewrite
+# === Fix DocumentRoot ONLY in vhost ===
+RUN sed -i 's|DocumentRoot /var/www/html|DocumentRoot /var/www/html/public|' \
+    /etc/apache2/sites-available/000-default.conf
 
-# System deps
+# === System deps ===
 RUN apt-get update && apt-get install -y \
     git \
     unzip \
@@ -20,26 +21,26 @@ RUN apt-get update && apt-get install -y \
     libsqlite3-dev \
     && docker-php-ext-install pdo pdo_sqlite zip mbstring exif pcntl bcmath
 
-# Composer
+# === Composer ===
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
 WORKDIR /var/www/html
 
-# Copy full Laravel project
+# === Copy Laravel ===
 COPY . .
 
-# Install dependencies
+# === Install deps ===
 RUN composer install \
     --no-dev \
     --no-interaction \
     --prefer-dist \
     --optimize-autoloader
 
-# Permissions
+# === Permissions ===
 RUN chown -R www-data:www-data storage bootstrap/cache \
     && chmod -R 775 storage bootstrap/cache
 
-# Laravel safe command
+# === Laravel ===
 RUN php artisan storage:link || true
 
 EXPOSE 80
