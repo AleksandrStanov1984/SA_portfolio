@@ -1,8 +1,12 @@
 FROM php:8.2-apache
 
-# Disable other MPMs, keep prefork
-RUN a2dismod mpm_event mpm_worker || true \
+# HARD RESET Apache MPMs (THIS IS THE FIX)
+RUN rm -f /etc/apache2/mods-enabled/mpm_*.load \
+    && rm -f /etc/apache2/mods-enabled/mpm_*.conf \
     && a2enmod mpm_prefork
+
+# Enable rewrite
+RUN a2enmod rewrite
 
 # System deps
 RUN apt-get update && apt-get install -y \
@@ -14,8 +18,7 @@ RUN apt-get update && apt-get install -y \
     libxml2-dev \
     sqlite3 \
     libsqlite3-dev \
-    && docker-php-ext-install pdo pdo_sqlite zip mbstring exif pcntl bcmath \
-    && a2enmod rewrite
+    && docker-php-ext-install pdo pdo_sqlite zip mbstring exif pcntl bcmath
 
 # Composer
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
@@ -36,7 +39,7 @@ RUN composer install \
 RUN chown -R www-data:www-data storage bootstrap/cache \
     && chmod -R 775 storage bootstrap/cache
 
-# Laravel safe commands
+# Laravel safe command
 RUN php artisan storage:link || true
 
 EXPOSE 80
