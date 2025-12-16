@@ -289,8 +289,12 @@ document.addEventListener("DOMContentLoaded", () => {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
-                "X-CSRF-TOKEN": form.dataset.token
+                "X-CSRF-TOKEN": document
+                    .querySelector('meta[name="csrf-token"]')
+                    .getAttribute("content"),
+                "Accept": "application/json"
             },
+            credentials: "same-origin", // 🔴 ВАЖНО
             body: JSON.stringify(payload)
         });
 
