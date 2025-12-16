@@ -1,5 +1,9 @@
 FROM php:8.2-apache
 
+# Disable other MPMs, keep prefork
+RUN a2dismod mpm_event mpm_worker || true \
+    && a2enmod mpm_prefork
+
 # System deps
 RUN apt-get update && apt-get install -y \
     git \
@@ -18,7 +22,7 @@ COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
 WORKDIR /var/www/html
 
-# Copy full Laravel project (vendor ignored via .dockerignore)
+# Copy full Laravel project
 COPY . .
 
 # Install dependencies
