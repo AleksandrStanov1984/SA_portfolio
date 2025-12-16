@@ -1,27 +1,56 @@
-# Laravel
+######################################
+# Laravel / PHP
+######################################
+
 /vendor
 /node_modules
-/public/storage
-/storage/*.key
-/storage/framework/cache/*
-/storage/framework/views/*
-/storage/framework/sessions/*
 
-.env
-.env.backup
-.env.local
-.env.development
-.env.testing
-.aaaaa.txt
+.env*
+!.env.example
 
-# SQLite local DB
+.phpunit.result.cache
+
+######################################
+# SQLite
+######################################
+
 /database/*.sqlite
+!/database/database.sqlite
 
-# Docker (recommended)
+######################################
+# Storage
+######################################
+
+/public/storage
+
+/storage/framework/*
+!/storage/framework/.gitignore
+
+/storage/logs/*
+/storage/*.key
+
+######################################
+# Docker
+######################################
+
 docker-compose.yml
 docker-compose.yaml
 
-# Puppeteer browser binaries / cache
+######################################
+# Frontend / Build artifacts
+######################################
+
+/public/js/*.map
+/public/css/*.map
+
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+######################################
+# Puppeteer / Headless Chrome
+######################################
+
 /.local-chromium
 /.puppeteer
 /.cache/puppeteer
@@ -30,27 +59,37 @@ docker-compose.yaml
 **/chrome-linux*/
 **/chrome-mac*/
 
-# PDF temp files
-*.pdf
+######################################
+# Temp files
+######################################
+
 /temp
 /tmp
 
+######################################
 # Logs
-/storage/logs/*.log
-npm-debug.log
-yarn-debug.log
-yarn-error.log
+######################################
 
-# OS garbage
-Thumbs.db
-Desktop.ini
-.DS_Store
+*.log
 
+######################################
 # IDE
+######################################
+
 .idea/
 .vscode/
 *.iml
 
-# Compiled assets
-/public/js/*.map
-/public/css/*.map
+######################################
+# OS
+######################################
+
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+######################################
+# Other
+######################################
+
+.aaaaa.txt
