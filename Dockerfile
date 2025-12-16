@@ -1,6 +1,6 @@
-FROM php:8.2-cli
+FROM php:8.2-fpm
 
-# System deps
+# System dependencies
 RUN apt-get update && apt-get install -y \
     git \
     unzip \
@@ -20,7 +20,11 @@ WORKDIR /var/www/html
 # Copy project
 COPY . .
 
-# Install deps
+# Create SQLite database
+RUN mkdir -p database \
+    && touch database/database.sqlite
+
+# Install PHP deps
 RUN composer install \
     --no-dev \
     --no-interaction \
@@ -28,9 +32,10 @@ RUN composer install \
     --optimize-autoloader
 
 # Permissions
-RUN chmod -R 775 storage bootstrap/cache
+RUN chmod -R 775 storage bootstrap/cache database
 
+# Expose port
 EXPOSE 80
 
-# Laravel built-in server (stable on Railway)
+# Start Laravel with built-in PHP server (safe mode)
 CMD php artisan serve --host=0.0.0.0 --port=80
