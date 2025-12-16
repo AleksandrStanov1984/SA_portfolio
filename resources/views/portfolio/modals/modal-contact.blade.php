@@ -1,10 +1,70 @@
 {{-- resources/views/portfolio/modals/modal-contact.blade.php --}}
+
+<style>
+#contactModalBox {
+    width: 720px;        /* ПК: нормальная ширина */
+    max-width: 95%;      /* чтобы немного адаптировалось при уменьшении окна */
+}
+
+
+/* ================================
+   TABLETS (до 900px)
+   ================================ */
+@media (max-width: 900px) {
+    #contactModalBox {
+        width: 90% !important;
+        max-width: 90% !important;
+    }
+}
+
+
+/* ================================
+   MOBILE (до 600px)
+   ================================ */
+@media (max-width: 600px) {
+
+    #contactModal {
+        align-items: flex-start !important;
+        padding-top: 40px !important;
+    }
+
+    #contactModalBox {
+        width: 90% !important;       /* адаптивная ширина */
+        max-width: 90% !important;
+        padding: 20px !important;
+        border-radius: 14px !important;
+
+        max-height: 85vh;            /* чтобы форма не вылезала */
+        overflow-y: auto;            /* прокрутка внутри */
+    }
+
+    #contactModalBox h3 {
+        font-size: 1.2rem !important;
+        margin-bottom: 12px !important;
+    }
+
+    #contactModalBox input,
+    #contactModalBox select,
+    #contactModalBox textarea {
+        font-size: 0.95rem !important;
+        padding: 10px !important;
+        border-radius: 8px !important;
+    }
+
+    #contactModalBox button {
+        padding: 10px !important;
+        font-size: 1rem !important;
+    }
+}
+
+
+</style>
 <div id="contactModal"
      style="position:fixed;inset:0;background:rgba(0,0,0,0.55);backdrop-filter:blur(4px);
             display:none;align-items:center;justify-content:center;z-index:9999;transition:0.3s;">
 
     <div id="contactModalBox"
-         style="width:720px;background:#0f172a;border:1px solid #243045;border-radius:16px;
+         style="background:#0f172a;border:1px solid #243045;border-radius:16px;
                 padding:28px;color:white;transform:scale(0.92);transition:0.25s;">
 
         <h3 style="font-size:1.4rem;margin-bottom:16px;">

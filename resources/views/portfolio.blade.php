@@ -237,10 +237,11 @@
             <div style="display:flex;flex-wrap:wrap;gap:12px;">
                 <a href="#contact" class="btn btn-primary">{{ __('portfolio.btn_contact') }}</a>
 
-                <a href="{{ route('portfolio.pdf', ['locale' => $locale]) }}"
+                <!-- <a href="{{ route('portfolio.pdf', ['locale' => $locale]) }}"
                    class="btn btn-outline">
                     {{ __('portfolio.btn_pdf') }}
-                </a>
+                </a> -->
+                <a href="#" class="btn btn-outline"> {{ __('portfolio.btn_pdf') }} </a>
             </div>
         </div>
 

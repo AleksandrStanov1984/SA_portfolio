@@ -911,125 +911,176 @@ right: -10px;
 }
 
 /* ============================= */
-/*   MOBILE HEADER FIXED WIDTH   */
+/*   MOBILE HEADER ( <768px )   */
 /* ============================= */
 
- /* Адаптация для телефонов */
- @media(max-width:768px){
+@media (max-width: 767px) {
 
-     #siteHeader {
-         border-radius: 26px;
-         padding: 10px 0;
-         background: rgba(8, 15, 29, 0.95);
-         backdrop-filter: blur(12px);
-     }
+    #siteHeader {
+        border-radius: 26px;
+        padding: 10px 0;
+        background: rgba(8, 15, 29, 0.95);
+        backdrop-filter: blur(12px);
+    }
 
-     .header-inner {
-         width:100%;
-         max-width:360px;
-         display:grid;
-         grid-template-columns: 32px 1fr auto;
-         align-items:center;
-         gap:10px;
-         position:relative;
-     }
+    .header-inner {
+        width: 100%;
+        max-width: 360px;
+        display: grid;
+        grid-template-columns: 32px 1fr auto;
+        align-items: center;
+        gap: 10px;
+        position: relative;
+    }
 
-     /* Бургер-кнопка */
-     .burger {
-         display: flex;
-         flex-direction: column;
-         justify-content: center;
-         align-items: center;
-         gap: 4px;
-         width: 28px;
-         height: 24px;
-         background: none;
-         border: none;
-         padding: 0;
-         cursor: pointer;
-     }
+    .burger {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 4px;
+        width: 28px;
+        height: 24px;
+        background: none;
+        border: none;
+        padding: 0;
+        cursor: pointer;
+    }
 
-     /* Сами полоски */
-     .burger span {
-         display: block;
-         width: 22px;
-         height: 2px;
-         background: #ffffff;
-         border-radius: 2px;
-     }
+    .burger span {
+        width: 22px;
+        height: 2px;
+        background: #fff;
+        border-radius: 2px;
+    }
 
-     .logo {
-         text-align:center;
-         font-size:0.85rem;
-         white-space:nowrap;
-     }
+    .logo {
+        text-align: center;
+        font-size: 0.85rem;
+        white-space: nowrap;
+    }
 
-     .locale-switch {
-         display:flex;
-         flex-direction:column;
-         gap:2px;
-         text-align:right;
-         font-size:0.75rem;
-     }
+    .locale-switch {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        text-align: right;
+        font-size: 0.75rem;
+    }
 
-     .nav-list {
-         position:absolute;
-         top:calc(100% + 10px);
-         right:0;
-         width:150px;
-         padding:16px 18px;
+    .nav-list {
+        position: absolute;
+        top: calc(100% + 10px);
+        right: 0;
+        width: 150px;
+        padding: 16px 18px;
+        display: none;
+        flex-direction: column;
+        gap: 14px;
 
-         display:none;
-         flex-direction:column;
-         gap:14px;
+        border-radius: 20px;
+        border: 1px solid #1f2937;
+        background: rgba(8, 15, 29, 0.96);
+        backdrop-filter: blur(12px);
+        z-index: 9999;
+    }
 
-         border-radius:20px;
-         border:1px solid #1f2937;
-         background:rgba(8,15,29,0.96);
-         backdrop-filter:blur(12px);
-         z-index:9999;
-     }
+    .nav-list.show {
+        display: flex;
+    }
+}
 
-     .nav-list.show {
-         display:flex;
-     }
- }
 
- /* DESKTOP — всегда flex */
- @media (min-width: 769px) {
+ /* ============================= */
+ /*     DESKTOP HEADER (>=768px)  */
+ /* ============================= */
+
+ @media (min-width: 768px) {
 
      #siteHeader {
          position: fixed;
-         top: 0;
-         left: 0;
-         width: 100%;
+         top: 12px;
+         left: 50%;
+         transform: translateX(-50%);
          z-index: 9999;
-         transition: opacity 0.25s ease, transform 0.2s ease;
+         opacity: 1 !important;
+     }
+
+     .burger {
+         display: none !important;
+     }
+
+     #miniHeader {
+         display: none !important;
      }
 
      .header-inner {
-         display: flex !important;
+         display: grid !important;
+         grid-template-columns: auto 1fr auto !important;
          align-items: center;
-         justify-content: space-between;
-
-         max-width: 1150px;
+         gap: 32px;
          width: 100%;
-         padding: 18px 32px;
+     }
 
-         /* ВАЖНО: Reset grid from mobile */
-         grid-template-columns: unset !important;
-         gap: unset !important;
+     .logo {
+         text-align: left !important;
+         font-size: 0.9rem;
+         justify-self: left;
+     }
+
+     .nav-list {
+         display: flex !important;
+         position: static !important;
+         flex-direction: row !important;
+         gap: 24px;
+         background: none !important;
+         border: none !important;
+         padding: 0 !important;
+     }
+
+     #mainNav {
+         justify-self: center !important;
+     }
+
+     .locale-switch {
+         display: flex !important;
+         flex-direction: row !important;
+         gap: 12px;
+         justify-content: flex-end;
      }
  }
 
 
-@media (min-width: 769px) {
-    .card {
-        display: grid;
-        grid-template-columns: minmax(0,3fr) minmax(0,2fr);
-        gap: 18px;
+
+
+/* MOBILE — 1 column */
+.projects-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 26px;
+}
+
+/* TABLET — 2 columns */
+@media (min-width: 600px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
+
+/* DESKTOP — 3 columns */
+@media (min-width: 992px) {
+    .projects-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* ВАЖНО — карточка никогда не должна быть grid-контейнером */
+.card.project-card {
+    display: block !important;
+}
+
+
+
 
 /* Мини панель со стрелкой — iOS стиль */
 .mini-header {
