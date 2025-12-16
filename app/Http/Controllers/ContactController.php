@@ -32,7 +32,7 @@ class ContactController extends Controller
         ]);
 
         // Кому отправляем
-        $adminEmail = env('MAIL_TO');    // ты
+        $adminEmail = env('CONTACT_FORM_EMAIL');    // ты
         $clientEmail = $data['email'];   // клиент
 
         try {
