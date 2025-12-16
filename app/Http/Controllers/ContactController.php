@@ -40,7 +40,7 @@ class ContactController extends Controller
             Mail::to($adminEmail)->send(new ContactMessageMail($data));
 
             // --- Автоответ клиенту ---
-            Mail::to($clientEmail)->send(new ContactAutoReplyMail($data));
+         //   Mail::to($clientEmail)->send(new ContactAutoReplyMail($data));
 
             return response()->json(['ok' => true]);
 
