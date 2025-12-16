@@ -1,7 +1,6 @@
 <script>
 document.addEventListener("DOMContentLoaded", () => {
 
-    console.log("REVIEWS SCRIPT LOADED");
 
     /* DOM elements */
     const modal = document.getElementById("reviewModal");

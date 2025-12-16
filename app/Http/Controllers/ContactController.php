@@ -37,10 +37,10 @@ class ContactController extends Controller
         try {
 
             // --- Письмо тебе ---
-            Mail::to($adminEmail)->queue(new ContactMessageMail($data));
+            Mail::to($adminEmail)->send(new ContactMessageMail($data));
 
             // --- Автоответ клиенту ---
-            Mail::to($clientEmail)->queue(new ContactAutoReplyMail($data));
+            Mail::to($clientEmail)->send(new ContactAutoReplyMail($data));
 
             return response()->json(['ok' => true]);
 
